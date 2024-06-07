@@ -4,7 +4,7 @@ import {
   viewAppointment,
   updateAppointment,
   deleteAppointment,
-} from "../controllers/formController";
+} from "../controllers/formController.js";
 const router = express.Router();
 
 router.post("/create", createAppointment);
@@ -13,3 +13,4 @@ router.put("/update", updateAppointment);
 router.delete("/delete", deleteAppointment);
 
 // use id in update and delete route
+export default router;

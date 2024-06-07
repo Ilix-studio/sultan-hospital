@@ -5,7 +5,7 @@ import asyncHandler from "express-async-handler";
 //Public
 
 const createAppointment = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: "Create appointment" });
+  res.status(200).json({ message: " Appointment Created" });
 });
 
 //view all appointment
@@ -26,7 +26,7 @@ const updateAppointment = asyncHandler(async (req, res) => {
 //DEL Request - /api/form/delete
 //private
 const deleteAppointment = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: "Create appointment" });
+  res.status(200).json({ message: "delete appointment" });
 });
 
 export {

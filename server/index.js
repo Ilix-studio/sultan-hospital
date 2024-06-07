@@ -3,6 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import appointmentFormRoute from "./routes/appointmentFormRoute.js";
 import { errorHandler, routeNotFound } from "./middleware/errorMiddleware.js";
+import connectDB from "./mongoDb/connection.js";
+import seedAdmin from "./AdminPrivilege/seeder.js";
 const port = 5000;
 
 dotenv.config();
@@ -16,6 +18,9 @@ app.use(cors());
 app.use("/api/form", appointmentFormRoute);
 app.use(routeNotFound);
 app.use(errorHandler);
+
+connectDB();
+seedAdmin();
 
 app.get("/", (req, res) => res.send("server is ready"));
 
