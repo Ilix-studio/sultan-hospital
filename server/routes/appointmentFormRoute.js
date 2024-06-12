@@ -10,8 +10,8 @@ const router = express.Router();
 
 router.post("/create", createAppointment);
 router.get("/view", viewAppointment, verifyJWT);
-router.put("/update", updateAppointment, verifyJWT);
-router.delete("/delete", deleteAppointment, verifyJWT);
+router.put("/update/:id", updateAppointment, verifyJWT);
+router.delete("/delete/:id", deleteAppointment, verifyJWT);
 
 // use id in update and delete route
 export default router;

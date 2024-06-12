@@ -17,18 +17,17 @@ const appointmentSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    doctor: {
+    doctorName: {
       type: String,
       ref: "Doctor",
       required: true,
     },
-    time: {
+    timeSchedule: {
       type: String,
       required: true,
     },
     date: {
       type: String,
-      required: true,
     },
   },
   { timestamps: true }
