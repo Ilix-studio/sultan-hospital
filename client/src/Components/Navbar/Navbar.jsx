@@ -37,6 +37,7 @@ const Navbar = () => {
           <NavItem to="/about">About</NavItem>
           <NavItem to="/services">Services</NavItem>
           <NavItem to="/contact">Contact</NavItem>
+          <NavItem to="/login">Login</NavItem>
         </NavMenu>
       </Nav>
     </Header>
