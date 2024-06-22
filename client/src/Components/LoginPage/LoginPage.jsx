@@ -10,7 +10,7 @@ import {
   Container,
 } from "./Login-styled.js";
 
-const LoginPage = () => {
+const LoginPage = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -25,6 +25,7 @@ const LoginPage = () => {
     },
     {
       onSuccess: () => {
+        setIsAuthenticated(true);
         navigate("/adminDashboard");
       },
     }

@@ -6,9 +6,6 @@ const appointmentSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    guardianName: {
-      type: String,
-    },
     phoneNumber: {
       type: String,
       required: true,
@@ -27,7 +24,8 @@ const appointmentSchema = mongoose.Schema(
       required: true,
     },
     date: {
-      type: String,
+      type: Date,
+      required: true,
     },
   },
   { timestamps: true }
