@@ -28,14 +28,14 @@ const loginAdmin = asyncHandler(async (req, res) => {
       },
     },
     process.env.ACCESS_TOKEN_SECRET,
-    { expiresIn: "10s" }
+    { expiresIn: "7d" }
   );
   const refreshToken = jwt.sign(
     {
       email: admin.email,
     },
     process.env.REFRESH_TOKEN_SECRET,
-    { expiresIn: "5min" }
+    { expiresIn: "7d" }
   );
   //create secure cookie with refresh token
   res.cookie("jwt", refreshToken, {

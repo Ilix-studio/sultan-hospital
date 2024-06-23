@@ -4,8 +4,8 @@ import verifyJWT from "../middleware/verifyJwt.js";
 
 const router = express.Router();
 
-router.post("/login", loginAdmin, verifyJWT);
-router.get("/refresh", refresh, verifyJWT);
+router.post("/login", loginAdmin);
+router.get("/refresh", verifyJWT, refresh);
 router.post("/logout", logout);
 
 export default router;
