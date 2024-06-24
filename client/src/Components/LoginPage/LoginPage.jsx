@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useMutation } from "react-query";
+import { useAuth } from "../../context/AuthProvider.js";
+import { useMutation, useQueryClient } from "react-query";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {
@@ -10,22 +11,25 @@ import {
   Container,
 } from "./Login-styled.js";
 
-const LoginPage = ({ setIsAuthenticated }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const LoginPage = () => {
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const queryClient = useQueryClient();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
+  // Use useMutation to handle login.
   const mutation = useMutation(
-    async (loginData) => {
+    async (credentials) => {
       const response = await axios.post(
         "http://localhost:5000/api/admin/login",
-        loginData
+        credentials
       );
       return response.data;
     },
     {
-      onSuccess: () => {
-        setIsAuthenticated(true);
+      onSuccess: (data) => {
+        login(data.token, data.user);
+        queryClient.invalidateQueries("user");
         navigate("/adminDashboard");
       },
     }
@@ -33,7 +37,7 @@ const LoginPage = ({ setIsAuthenticated }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    mutation.mutate({ email, password });
+    mutation.mutate(credentials);
   };
   return (
     <Container>
@@ -43,15 +47,19 @@ const LoginPage = ({ setIsAuthenticated }) => {
           <Input
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={credentials.email}
+            onChange={(e) =>
+              setCredentials({ ...credentials, email: e.target.value })
+            }
             required
           />
           <Input
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={credentials.password}
+            onChange={(e) =>
+              setCredentials({ ...credentials, password: e.target.value })
+            }
             required
           />
           <Button type="submit">Login</Button>

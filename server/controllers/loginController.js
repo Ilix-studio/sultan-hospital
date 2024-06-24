@@ -2,6 +2,7 @@ import asyncHandler from "express-async-handler";
 import User from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { message } from "antd";
 
 //Login Admin
 //POST Request - /api/admin/login
@@ -88,6 +89,13 @@ const refresh = (req, res) => {
   );
 };
 
+//GET Request - /api/admin/adminDashboard
+//Private
+const adminDasHboard = asyncHandler(async (req, res) => {
+  console.log(res);
+  res.status(200).json({ message: "Admin Dashboard" });
+});
+
 //Logout Admin
 //POST Request - /api/admin/logout
 //destroy cookie
@@ -104,4 +112,4 @@ const logout = (req, res) => {
   res.json({ message: "cookie clear" });
 };
 
-export { loginAdmin, refresh, logout };
+export { loginAdmin, refresh, adminDasHboard, logout };

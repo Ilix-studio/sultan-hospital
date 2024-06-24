@@ -10,11 +10,13 @@ import {
   NavToggle,
 } from "./Navbar-Style.js";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthProvider";
 
 import { RiCloseLine, RiMenuLine } from "react-icons/ri";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 
 const Navbar = ({ isAuthenticated, setIsAuthenticated }) => {
+  const { logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -23,8 +25,9 @@ const Navbar = ({ isAuthenticated, setIsAuthenticated }) => {
   };
 
   const handleLogout = () => {
+    logout();
     setIsAuthenticated(false);
-    navigate("/");
+    navigate("/login");
   };
 
   return (
