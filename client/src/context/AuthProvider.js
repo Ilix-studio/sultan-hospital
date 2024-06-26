@@ -1,36 +1,15 @@
-// Create a context for authentication to manage the authentication state and actions.
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
-// Create Auth Context
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-  //children represent the components inside auth-provider
-  const [authState, setAuthState] = useState({
-    isAuthenticated: false,
-    user: null,
-    token: null,
-  });
+  const [auth, setAuth] = useState({});
 
-  const login = (token, user) => {
-    setAuthState({
-      isAuthenticated: true,
-      user,
-      token,
-    });
-  };
-  const logout = () => {
-    setAuthState({
-      isAuthenticated: false,
-      user: null,
-      token: null,
-    });
-  };
   return (
-    <AuthContext.Provider value={{ authState, login, logout }}>
+    <AuthContext.Provider value={{ auth, setAuth }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export default AuthContext;

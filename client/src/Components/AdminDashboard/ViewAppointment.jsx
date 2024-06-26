@@ -1,18 +1,21 @@
 import React from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
-import { TableContainer, Table, Th, Td, Tr } from "./Dashboard-styled.js";
-import Update from "../AdminDashboard/Update.jsx";
-import Delete from "../AdminDashboard/Delete.jsx";
-const ViewAppointments = () => {
-  const fetchAppointments = async () => {
-    const { data } = await axios.get("http://localhost:5000/api/form/view");
-    return data;
-  };
+import { TableContainer, Table, Th, Td, Tr } from "./Dashboard-styled";
+import Update from "./Update";
+import Delete from "./Delete";
+
+const fetchAppointments = async () => {
+  const { data } = await axios.get("http://localhost:5000/api/form/view");
+  return data;
+};
+
+const ViewAppointment = () => {
   const { data, error, isLoading } = useQuery(
     "appointments",
     fetchAppointments
   );
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
   return (
@@ -50,4 +53,4 @@ const ViewAppointments = () => {
   );
 };
 
-export default ViewAppointments;
+export default ViewAppointment;
