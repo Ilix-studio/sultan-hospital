@@ -1,4 +1,3 @@
-// Navbar.js
 import React, { useState } from "react";
 import {
   Header,
@@ -9,22 +8,13 @@ import {
   NavMenu,
   NavToggle,
 } from "./Navbar-Style.js";
-import { useNavigate } from "react-router-dom";
-
 import { RiCloseLine, RiMenuLine } from "react-icons/ri";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 
-const Navbar = ({ isAuthenticated, setIsAuthenticated }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-  };
-
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    navigate("/");
   };
 
   return (
@@ -42,11 +32,7 @@ const Navbar = ({ isAuthenticated, setIsAuthenticated }) => {
           <NavItem to="/about">About</NavItem>
           <NavItem to="/services">Services</NavItem>
           <NavItem to="/contact">Contact</NavItem>
-          {isAuthenticated ? (
-            <NavItem onClick={handleLogout}>Logout</NavItem>
-          ) : (
-            <NavItem to="/login">Login</NavItem>
-          )}
+          <NavItem to="/login">Admin Login</NavItem>
         </NavMenu>
       </Nav>
     </Header>

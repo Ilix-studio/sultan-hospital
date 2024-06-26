@@ -1,7 +1,5 @@
+import useAuth from "../../hooks/useAuth.js";
 import { useState } from "react";
-import { useMutation } from "react-query";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import {
   Button,
   Input,
@@ -10,31 +8,16 @@ import {
   Container,
 } from "./Login-styled.js";
 
-const LoginPage = ({ setIsAuthenticated }) => {
+const LoginPage = () => {
+  const { setAuth } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
-  const mutation = useMutation(
-    async (loginData) => {
-      const response = await axios.post(
-        "http://localhost:5000/api/admin/login",
-        loginData
-      );
-      return response.data;
-    },
-    {
-      onSuccess: () => {
-        setIsAuthenticated(true);
-        navigate("/adminDashboard");
-      },
-    }
-  );
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    mutation.mutate({ email, password });
+  const handleSubmit = () => {
+    //if success navigate to admin dashboard
+    // if error navigate to 404 page
   };
+
   return (
     <Container>
       <FormWrapper>
@@ -56,9 +39,6 @@ const LoginPage = ({ setIsAuthenticated }) => {
           />
           <Button type="submit">Login</Button>
         </form>
-        {mutation.isLoading && <p>Loading...</p>}
-        {mutation.isError && <p>Error: {mutation.error.message}</p>}
-        {mutation.isSuccess && <p>Login successful. Redirecting... </p>}
       </FormWrapper>
     </Container>
   );

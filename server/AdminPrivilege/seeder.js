@@ -2,10 +2,11 @@ import mongoose from "mongoose";
 import User from "../models/userModel.js";
 
 const seedAdmin = async () => {
-  const existingAdmin = await User.findOne({ email: "ilix99@gmail.com" });
+  const existingAdmin = await User.findOne({ email: "johnDoe789@gmail.com" });
   if (!existingAdmin) {
     const admin = await User.create({
-      email: "ilix99@gmail.com",
+      name: "Ilix",
+      email: "johnDoe789@gmail.com",
       password: "Qwerty",
       role: "admin",
     });
