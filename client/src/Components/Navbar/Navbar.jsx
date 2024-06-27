@@ -1,4 +1,3 @@
-// Navbar.js
 import React, { useState } from "react";
 import {
   Header,
@@ -9,13 +8,11 @@ import {
   NavMenu,
   NavToggle,
 } from "./Navbar-Style.js";
-
 import { RiCloseLine, RiMenuLine } from "react-icons/ri";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -31,12 +28,11 @@ const Navbar = () => {
           {isOpen ? <RiCloseLine size={24} /> : <RiMenuLine size={24} />}
         </NavToggle>
         <NavMenu isOpen={isOpen}>
-          <NavItem to="/" exact>
-            Home
-          </NavItem>
+          <NavItem to="/">Home</NavItem>
           <NavItem to="/about">About</NavItem>
           <NavItem to="/services">Services</NavItem>
           <NavItem to="/contact">Contact</NavItem>
+          <NavItem to="/login">Admin Login</NavItem>
         </NavMenu>
       </Nav>
     </Header>

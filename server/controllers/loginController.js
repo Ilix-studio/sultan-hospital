@@ -2,6 +2,7 @@ import asyncHandler from "express-async-handler";
 import User from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { message } from "antd";
 
 //Login Admin
 //POST Request - /api/admin/login
@@ -28,14 +29,18 @@ const loginAdmin = asyncHandler(async (req, res) => {
       },
     },
     process.env.ACCESS_TOKEN_SECRET,
+<<<<<<< HEAD
     { expiresIn: "10min" }
+=======
+    { expiresIn: "7d" }
+>>>>>>> f88f4dc07b4a3a1bd077e65b27d1b38568cfd1ee
   );
   const refreshToken = jwt.sign(
     {
       email: admin.email,
     },
     process.env.REFRESH_TOKEN_SECRET,
-    { expiresIn: "5min" }
+    { expiresIn: "7d" }
   );
   //create secure cookie with refresh token
   res.cookie("jwt", refreshToken, {
@@ -88,6 +93,13 @@ const refresh = (req, res) => {
   );
 };
 
+//GET Request - /api/admin/adminDashboard
+//Private
+const adminDasHboard = asyncHandler(async (req, res) => {
+  console.log(res);
+  res.status(200).json({ message: "Admin Dashboard" });
+});
+
 //Logout Admin
 //POST Request - /api/admin/logout
 //destroy cookie
@@ -104,4 +116,4 @@ const logout = (req, res) => {
   res.json({ message: "cookie clear" });
 };
 
-export { loginAdmin, refresh, logout };
+export { loginAdmin, refresh, adminDasHboard, logout };

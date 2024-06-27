@@ -71,12 +71,25 @@ const createAppointment = asyncHandler(async (req, res) => {
 //PUT Request - /api/form/update
 //private
 const updateAppointment = asyncHandler(async (req, res) => {
-  const { id, phoneNumber } = req.params;
-  const { patientName, guardianName, address, doctorName, timeSchedule } =
-    req.body;
+  const { id } = req.params;
+  const {
+    patientName,
+    guardianName,
+    phoneNumber,
+    address,
+    doctorName,
+    timeSchedule,
+  } = req.body;
   const appointment = await Appointment.findOneAndUpdate(
-    { _id: id, phoneNumber },
-    { patientName, guardianName, address, doctorName, timeSchedule },
+    { _id: id },
+    {
+      patientName,
+      guardianName,
+      phoneNumber,
+      address,
+      doctorName,
+      timeSchedule,
+    },
     { new: true }
   );
   if (appointment) {

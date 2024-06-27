@@ -6,7 +6,7 @@ import loginRoutes from "./routes/loginRoute.js";
 import { errorHandler, routeNotFound } from "./middleware/errorMiddleware.js";
 import connectDB from "./mongoDb/connection.js";
 import cookieParser from "cookie-parser";
-// import seedAdmin from "./AdminPrivilege/seeder.js";
+import seedAdmin from "./AdminPrivilege/seeder.js";
 const port = 5000;
 
 dotenv.config();
@@ -24,7 +24,7 @@ app.use(routeNotFound);
 app.use(errorHandler);
 
 connectDB();
-// seedAdmin();
+seedAdmin();
 
 app.get("/", (req, res) => res.send("server is ready"));
 
