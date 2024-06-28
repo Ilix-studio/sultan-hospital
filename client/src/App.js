@@ -7,7 +7,6 @@ import Box from "./Components/Box/Box";
 import Box1 from "./Components/Box1/Box1";
 import Box2 from "./Components/Box2/Box2";
 import Box3 from "./Components/Box3/Box3";
-import toast, { Toaster } from 'react-hot-toast';
 
 import { Route, Routes } from "react-router-dom";
 

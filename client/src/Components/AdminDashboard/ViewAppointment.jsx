@@ -50,7 +50,6 @@ const ViewAppointment = () => {
         </tbody>
       </Table>
     </TableContainer>
-  );
-};
+  ); };
 
 export default ViewAppointment;
