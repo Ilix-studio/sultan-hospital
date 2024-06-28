@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import User from "../models/userModel.js";
 
 const seedAdmin = async () => {
@@ -19,7 +18,6 @@ const seedAdmin = async () => {
   } else {
     console.log("Admin user already exists.");
   }
-  mongoose.connection.close();
 };
 
 export default seedAdmin;
