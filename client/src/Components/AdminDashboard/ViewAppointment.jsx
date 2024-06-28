@@ -1,16 +1,20 @@
 import React from "react";
-import axios from "axios";
 import { useQuery } from "react-query";
 import { TableContainer, Table, Th, Td, Tr } from "./Dashboard-styled";
 import Update from "./Update";
 import Delete from "./Delete";
-
-const fetchAppointments = async () => {
-  const { data } = await axios.get("http://localhost:5000/api/form/view");
-  return data;
-};
+import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
 
 const ViewAppointment = () => {
+  const { axiosPrivate2 } = useAxiosInterceptor();
+
+  const fetchAppointments = async () => {
+    const { data } = await axiosPrivate2.get(
+      "http://localhost:5000/api/form/view"
+    );
+    return data;
+  };
+
   const { data, error, isLoading } = useQuery(
     "appointments",
     fetchAppointments
@@ -18,6 +22,7 @@ const ViewAppointment = () => {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
+  //add react hot toast to show error message
   return (
     <TableContainer>
       <Table>
