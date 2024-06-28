@@ -1,6 +1,22 @@
 import asyncHandler from "express-async-handler";
 import Appointment from "../models/appointmentModel.js";
 
+// View today's appointments
+// GET Request - /api/form/todays-appointments
+// Private
+const viewTodaysAppointments = asyncHandler(async (req, res) => {
+  const today = new Date().toISOString().split('T')[0]; 
+  let query = Appointment.find().where("date").equals(today);
+
+  const todaysAppointments = await query.exec();
+
+  if (!todaysAppointments || todaysAppointments.length === 0) {
+    res.status(404).json({ message: "No appointments found for today" });
+  } else {
+    res.status(200).json(todaysAppointments);
+  }
+});
+
 //view all appointment
 //GET Request - /api/form/view
 //Private
@@ -8,7 +24,7 @@ const viewAppointment = asyncHandler(async (req, res) => {
   const { date, sortBy, filterBy } = req.query;
   let query = Appointment.find();
   if (date) {
-    query = query.where("timeSchedule").equals(date);
+    query = query.where("date").equals(date);
   }
   if (filterBy) {
     query = query.find(filter);
@@ -32,31 +48,25 @@ const viewAppointment = asyncHandler(async (req, res) => {
 const createAppointment = asyncHandler(async (req, res) => {
   const {
     patientName,
-    guardianName,
     phoneNumber,
-    address,
-    doctorName,
     timeSchedule,
+    date,
   } = req.body;
 
   // Confirm data
   if (
     !patientName ||
-    !guardianName ||
+    !date ||
     !phoneNumber ||
-    !address ||
-    !doctorName ||
     !timeSchedule
   ) {
     return res.status(400).json({ message: "All fields are required" });
   }
   const newAppointment = new Appointment({
     patientName,
-    guardianName,
     phoneNumber,
-    address,
-    doctorName,
     timeSchedule,
+    date,
   });
   const appointmentCreated = await newAppointment.save();
   res.status(201).json(appointmentCreated);
@@ -74,21 +84,17 @@ const updateAppointment = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const {
     patientName,
-    guardianName,
     phoneNumber,
-    address,
-    doctorName,
     timeSchedule,
+    date,
   } = req.body;
   const appointment = await Appointment.findOneAndUpdate(
     { _id: id },
     {
       patientName,
-      guardianName,
       phoneNumber,
-      address,
-      doctorName,
       timeSchedule,
+      date,
     },
     { new: true }
   );
@@ -118,6 +124,7 @@ const deleteAppointment = asyncHandler(async (req, res) => {
 });
 
 export {
+  viewTodaysAppointments,
   createAppointment,
   viewAppointment,
   updateAppointment,
