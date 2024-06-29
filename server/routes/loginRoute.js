@@ -8,6 +8,7 @@ import {
 import verifyJWT from "../middleware/verifyJwt.js";
 
 const router = express.Router();
+// http://localhost:5000/api/admin
 
 router.post("/login", loginAdmin);
 router.get("/refresh", verifyJWT, refresh);
