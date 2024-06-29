@@ -6,31 +6,10 @@ import useRefreshToken from "./useRefreshToken";
 import useAuth from "./useAuth";
 
 //in login ?
-const URL = "http://localhost:5000/api/admin/adminDashboard";
-const URL2 = "http://localhost:5000/api/form/view";
-const URL3 = "http://localhost:5000/api/form/update/:id";
-const URL4 = "http://localhost:5000/api/form/delete/:id";
-
-// I have to make different URL instance to attach axios interceptors
+const URL = "http://localhost:5000";
 
 export const axiosPrivate = axios.create({
   baseURL: URL,
-  headers: { "Content-Type": "application/json" },
-  withCredentials: true,
-});
-
-export const axiosPrivate2 = axios.create({
-  baseURL: URL2,
-  headers: { "Content-Type": "application/json" },
-  withCredentials: true,
-});
-export const axiosPrivate3 = axios.create({
-  baseURL: URL3,
-  headers: { "Content-Type": "application/json" },
-  withCredentials: true,
-});
-export const axiosPrivate4 = axios.create({
-  baseURL: URL4,
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
 });
@@ -71,9 +50,6 @@ const useAxiosInterceptor = () => {
 
   return {
     axiosPrivate,
-    axiosPrivate2,
-    axiosPrivate3,
-    axiosPrivate4,
   };
 };
 

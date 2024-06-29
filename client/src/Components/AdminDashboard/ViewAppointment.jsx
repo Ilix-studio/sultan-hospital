@@ -6,10 +6,10 @@ import Delete from "./Delete";
 import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
 
 const ViewAppointment = () => {
-  const { axiosPrivate2 } = useAxiosInterceptor();
+  const { axiosPrivate } = useAxiosInterceptor();
 
   const fetchAppointments = async () => {
-    const { data } = await axiosPrivate2.get(
+    const { data } = await axiosPrivate.get(
       "http://localhost:5000/api/form/view"
     );
     return data;
