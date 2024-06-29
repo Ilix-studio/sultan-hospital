@@ -1,0 +1,32 @@
+.container-1{
+    padding-bottom: 50px;
+
+}
+.item1{
+margin: 0px;
+background-color: black;
+width: 50%;
+height: 200px;
+float: left;
+}
+.item2{
+margin: 0px;
+background-color: brown;
+width: 50%;
+height: 200px;
+float: right;
+}
+.item3{
+margin: 0px;
+background-color: blueviolet;
+width: 50%;
+height: 200px;
+float: left;
+}
+.item4{
+margin: 0px;
+background-color: aqua;
+width: 50%;
+height: 200px;
+float: right;
+}

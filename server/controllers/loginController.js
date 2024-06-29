@@ -28,7 +28,11 @@ const loginAdmin = asyncHandler(async (req, res) => {
       },
     },
     process.env.ACCESS_TOKEN_SECRET,
+<<<<<<< HEAD
+    { expiresIn: "10min" }
+=======
     { expiresIn: "7d" }
+>>>>>>> f88f4dc07b4a3a1bd077e65b27d1b38568cfd1ee
   );
   const refreshToken = jwt.sign(
     {
