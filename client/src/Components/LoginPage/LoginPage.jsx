@@ -1,5 +1,8 @@
+import axios from "axios";
 import useAuth from "../../hooks/useAuth.js";
 import { useState } from "react";
+import { useMutation } from "react-query";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Input,
@@ -8,14 +11,51 @@ import {
   Container,
 } from "./Login-styled.js";
 
+const LOGIN_URL = "http://localhost:5000/api/admin/login";
+
+const login = async ({ email, password }) => {
+  const response = await axios.post(
+    LOGIN_URL,
+    JSON.stringify({ email, password }),
+    {
+      headers: { "Content-Type": "application/json" },
+      withCredentials: true,
+    }
+  );
+  return response.data;
+};
+
 const LoginPage = () => {
   const { setAuth } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setError] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    //if success navigate to admin dashboard
-    // if error navigate to 404 page
+  const { mutate, isLoading, error } = useMutation(login, {
+    onSuccess: (data) => {
+      const accessToken = data?.accessToken;
+      setAuth({ email, password, accessToken });
+      setEmail("");
+      setPassword("");
+      navigate("/adminDashboard");
+    },
+    onError: (error) => {
+      if (!error.response) {
+        setError("No Server Response");
+      } else if (error.response?.status === 400) {
+        setError("Missing Email or Password");
+      } else if (error.response?.status === 401) {
+        setError("Unauthorized");
+      } else {
+        setError("Login Failed");
+      }
+    },
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    mutate({ email, password });
   };
 
   return (
@@ -37,8 +77,12 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <Button type="submit">Login</Button>
+          <Button type="submit" disabled={isLoading}>
+            Login
+          </Button>
         </form>
+        {error && <p>{errorMsg}</p>}
+        {mutate.isLoading && <p>Loading</p>}
       </FormWrapper>
     </Container>
   );
