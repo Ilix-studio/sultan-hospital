@@ -10,7 +10,7 @@ const ViewAppointment = () => {
 
   const fetchAppointments = async () => {
     const { data } = await axiosPrivate.get(
-      "http://localhost:5000/api/form/view"
+      "http://localhost:5000/api/form/todays-appointments"
     );
     return data;
   };
@@ -55,6 +55,7 @@ const ViewAppointment = () => {
         </tbody>
       </Table>
     </TableContainer>
-  ); };
+  );
+};
 
 export default ViewAppointment;

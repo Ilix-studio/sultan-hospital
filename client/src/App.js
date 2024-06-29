@@ -1,4 +1,3 @@
-
 import Cards from "./Components/Cards/Cards";
 import Navbar from "./Components/Navbar/Navbar";
 import GlobalStyles from "./Components/Styles/GLobal";
@@ -21,7 +20,6 @@ import Update from "./Components/AdminDashboard/Update";
 import Delete from "./Components/AdminDashboard/Delete";
 import LoginPage from "./Components/LoginPage/LoginPage";
 
-
 const App = () => {
   return (
     <>
@@ -29,10 +27,10 @@ const App = () => {
       <Navbar />
       <Heading />
       <Cards />
-      < Box />
-      < Box1 />
-      < Box2 />
-      < Box3 />
+      <Box />
+      <Box1 />
+      <Box2 />
+      <Box3 />
 
       <Routes>
         <Route path="/login" element={<LoginPage />} />

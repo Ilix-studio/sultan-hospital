@@ -16,7 +16,7 @@ const AdminDashboard = () => {
 
       <div className="three_box">
         <Link to="create">Create</Link>
-        <Link to="totalapps">Total Todays Appointment</Link>
+        <Link to="totalappsToday">Total Todays Appointment</Link>
         <Link to="allAppoint">Total Appointment till now</Link>
       </div>
       <div>
