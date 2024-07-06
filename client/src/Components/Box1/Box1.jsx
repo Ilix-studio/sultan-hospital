@@ -1,17 +1,28 @@
-import React from 'react'
-import './Box1.css'
+import React from 'react';
+import './Box1.css';
 
 const Box1 = () => {
-  return (
-    <div className='box-container-2'>
-        <h1 >WHY SULTAN HOSPITAL ?</h1>
-        <div className='box-item1'>24/7 EMERGENCY MEDICAL SURVICE</div>
-        <div className='box-item1'>AFFORDABLE TREATMENT AND TEST</div>
-        <div className='box-item1'>SPECIAL OFFER ON FULL BODY CHECKUP </div>
-        <div className='box-item1'>QUALITY PROFESSIONAL HIGHER ONLY</div>
-        <div className='box-item1'>QUALIFIED EXPERTS IN THERIR FIELD</div>   
-    </div>
-  )
-}
+  const departments = [
+    '24/7 EMERGENCY MEDICAL SURVICE',
+    'AFFORDABLE TREATMENT AND TEST',
+    'SPECIAL OFFER ON FULL BODY CHECKUP',
+    'QUALITY PROFESSIONAL HIGHER ONLY',
+    'QUALIFIED EXPERTS IN THERIR FIELD',
+  ];
 
-export default Box1
+  return (
+    <div className="container1">
+      <div className="title-row1">
+        <h1 className="title1">WHY SULTAN HOSPITAL ?</h1>
+      </div>
+      {departments.map((department, index) => (
+        <div className="department-row1" key={index}>
+          <div className="department-background1"></div>
+          <div className="department-name1">{department}</div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Box1;

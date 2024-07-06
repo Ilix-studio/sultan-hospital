@@ -19,6 +19,7 @@ import AllAppointmentsCount from "./Components/AdminDashboard/AllAppointmentsCou
 import Update from "./Components/AdminDashboard/Update";
 import Delete from "./Components/AdminDashboard/Delete";
 import LoginPage from "./Components/LoginPage/LoginPage";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   return (
@@ -46,6 +47,8 @@ const App = () => {
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
+
+      <Footer />
     </>
   );
 };
