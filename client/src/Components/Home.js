@@ -5,21 +5,22 @@ import Box3 from "./Box3/Box3";
 import Cards from "./Cards/Cards";
 import Heading from "./Heading/Heading";
 import Navbar from "./Navbar/Navbar";
-import GlobalStyles from "./Styles/GLobal";
+
+import Footer from "./Footer/Footer";
 
 const Home = () => {
-    return (
-      <>
-        <GlobalStyles />
-        <Navbar />
-        <Heading />
-        <Cards />
-        <Box />
-        <Box1 />
-        <Box2 />
-        <Box3 />
-      </>
-    );
-  };
-  
-  export default Home;
+  return (
+    <>
+      <Navbar />
+      <Heading />
+      <Cards />
+      <Box />
+      <Box1 />
+      <Box2 />
+      <Box3 />
+      <Footer />
+    </>
+  );
+};
+
+export default Home;

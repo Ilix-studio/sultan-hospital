@@ -10,14 +10,15 @@ import AllAppointmentsCount from "./Components/AdminDashboard/AllAppointmentsCou
 import Update from "./Components/AdminDashboard/Update";
 import Delete from "./Components/AdminDashboard/Delete";
 import LoginPage from "./Components/LoginPage/LoginPage";
-import Footer from "./Components/Footer/Footer";
+import GlobalStyles from "./Components/Styles/GLobal";
 import Home from "./Components/Home";
 
 const App = () => {
   return (
     <>
+      <GlobalStyles />
       <Routes>
-      <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/adminDashboard" element={<AdminDashboard />}>
           <Route path="create" element={<CreateAppointment />} />
@@ -31,8 +32,6 @@ const App = () => {
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
-
-      <Footer />
     </>
   );
 };
