@@ -1,3 +1,39 @@
-.container1{
-       margin-top: 120px;
+.leading {
+       color: #0d567e;
 }
+.leading-healthcare {
+       margin: 0;
+       color: #ce4141;
+}
+.excellence-in {
+       margin: 0;
+}
+.leading-healthcare-excellence-container {
+       width: 100%;
+       margin-top: 80px;
+       margin-left: 20px;
+       position: relative;
+       font-size: 25px;
+       font-weight: 600;
+       text-align: left;
+       display: inline-block;
+       filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+       color: #0d567e;
+}
+
+.sultan-multispeciality-hospita {
+       margin: 0;
+}
+.sultan-multispeciality-hospita-container {
+       width: 100%;
+       position: relative;
+       margin-left: 20px;
+       margin-top: 20px;
+       font-weight: 600;
+       color: #595959;
+       text-align: left;
+       display: inline-block;
+}
+
+
+

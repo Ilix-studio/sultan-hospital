@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: "Montserrat";
     font-size: .940rem;
     background-color: hsl(200, 100%,97%);
+    line-height: normal;
   }
   ul {
     list-style: none;
