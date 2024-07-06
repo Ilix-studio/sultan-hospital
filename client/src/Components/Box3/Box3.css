@@ -42,41 +42,43 @@
   }
   @media (max-width: 768px) {
     .box3 {
-      justify-content: center; /* Center items on smaller screens */
-      gap: 1rem; /* Reduce the gap for smaller screens */
+      justify-content: center; 
+      gap: 1rem; 
     }
   
     .photo-card,
     .featured-image {
-      width: 45%; /* Adjust width for smaller screens */
-      max-width: 300px; /* Optional: limit the maximum width */
+      width: 100%; 
+      max-width: 190px; 
     }
   
     .photo-card {
-      height: auto; /* Allow height to adjust based on content */
+      height: auto; 
     }
   
     .photo-card-title {
-      font-size: 1rem; /* Smaller font size for smaller screens */
+      font-size: 1rem; 
     }
   
     .photo-card-image {
-      width: 100%; /* Full width for smaller screens */
-      max-width: 300px; /* Optional: limit the maximum width */
+      width: 100%; 
+      max-width: 300px; 
       aspect-ratio: 1;
     }
   }
   
   @media (max-width: 480px) {
     .box3 {
-      gap: 0.75rem; /* Further reduce the gap for very small screens */
+      gap: 0.75rem; 
     }
   
     .photo-card-title {
-      font-size: 0.625rem; /* Even smaller font size for very small screens */
+      font-size: 1rem;
     }
   
     .photo-card-image {
-      max-width: 150px;
+      max-width: 200px;
     }
+    
   }
+ 
