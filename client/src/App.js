@@ -23,7 +23,7 @@ const App = () => {
           <Route path="create" element={<CreateAppointment />} />
           <Route path="totalapps" element={<TodaysTotalAppointments />} />
           <Route path="allAppoint" element={<AllAppointmentsCount />} />
-          <Route index element={<ViewAppointment />} />
+          <Route index element={<AllAppointmentsCount />} />
           <Route path="viewTodays" element={<ViewAppointment />}>
             <Route path="update" element={<Update />} />
             <Route path="delete" element={<Delete />} />
