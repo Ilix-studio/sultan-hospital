@@ -66,11 +66,12 @@
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically */
-  height: 100vh; /* Full viewport height */
+   /* Full viewport height */
 }
 
 .centered-div {
   /* Any additional styling */
-  
+  margin: 0px;
+  width: 30%;
 }
 
