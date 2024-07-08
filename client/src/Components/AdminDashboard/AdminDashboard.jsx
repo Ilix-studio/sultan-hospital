@@ -1,4 +1,17 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import {
+  Container,
+  Header,
+  Logo,
+  LogoutButton,
+  Main,
+  CardContainer,
+  Card,
+  CardContent,
+  Count,
+  Description,
+} from "./Dashboard-styled";
+
 // import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
 
 const AdminDashboard = () => {
@@ -7,21 +20,41 @@ const AdminDashboard = () => {
 
   return (
     <>
-      {/* Hide the navbar */}
-      <div className="logo">Sultan Hospital</div>
-      <div>
-        <div className="Greetings">Welcome, Admin</div>
-        <div className="Logout">Logout</div>
-      </div>
+      <Container>
+        <Header>
+          <Logo>
+            <h1>Sultan Hospital</h1>
+          </Logo>
+          <LogoutButton>Log out</LogoutButton>
+        </Header>
+        <Main>
+          <div className="welcome-message">
+            <h2>Welcome, Admin</h2>
+            <p>Start the day with managing new appointments</p>
+          </div>
+        </Main>
+        <CardContainer>
+          <Card>
+            <CardContent>
+              <Count>94</Count>
+            </CardContent>
+            <Description>Total</Description>
+          </Card>
+          <Card>
+            <CardContent>
+              <Count>32</Count>
+            </CardContent>
+            <Description>Total</Description>
+          </Card>
+          <Card>
+            <CardContent>
+              <Count>56</Count>
+            </CardContent>
+            <Description>Total</Description>
+          </Card>
+        </CardContainer>
+      </Container>
 
-      <div className="three_box">
-        <Link to="create">Create</Link>
-        <Link to="totalappsToday">Total Todays Appointment</Link>
-        <Link to="allAppoint">Total Appointment till now</Link>
-      </div>
-      <div>
-        <Link to="viewTodays">View Todays Appointment</Link>
-      </div>
       <Outlet />
     </>
   );

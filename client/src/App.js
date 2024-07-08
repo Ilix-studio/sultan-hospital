@@ -20,16 +20,22 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
+
         <Route path="/adminDashboard" element={<AdminDashboard />}>
           <Route path="create" element={<CreateAppointment />} />
+          <Route index element={<TodaysTotalAppointments />} />
+
           <Route path="totalapps" element={<TodaysTotalAppointments />} />
+          <Route index element={<TodaysTotalAppointments />} />
+
           <Route path="allAppoint" element={<AllAppointmentsCount />} />
-          <Route index element={<ViewAppointment />} />
+
           <Route path="viewTodays" element={<ViewAppointment />}>
             <Route path="update" element={<Update />} />
             <Route path="delete" element={<Delete />} />
           </Route>
         </Route>
+
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
