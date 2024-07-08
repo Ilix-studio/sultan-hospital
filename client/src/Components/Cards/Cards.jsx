@@ -7,9 +7,7 @@ const InputContainer = () => {
   return (
     <>
     <div className="main-container">
-    <div className='sub-heading'>
-    <h1>MAKE AN APPOINTMENT</h1>
-    </div>
+    <div className='practice'>
     <div className="input-container">
       <input 
         type="text" 
@@ -65,8 +63,8 @@ const InputContainer = () => {
       <label htmlFor="input" className={`label ${inputValue && 'filled'}`}>Select Doctor</label>
       <div className="underline"></div>
     </div>
-    <div class="container">
-    <button class="centered-div" >SUBMIT</button>
+    
+    <button class="rectangle-div"><span class="make-an-appointment">MAKE AN APPOINTMENT</span></button>
     </div>
     </div>
     </>
