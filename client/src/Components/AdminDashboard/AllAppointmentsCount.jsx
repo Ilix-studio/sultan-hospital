@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { TableContainer, Table, Th, Td, Tr } from "./Dashboard-styled";
+import { TableContainer, Table, Th, Td } from "./Dashboard-styled";
 import Update from "./Update";
 import Delete from "./Delete";
 import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
@@ -28,7 +28,7 @@ const AllAppointmentsCount = () => {
     <TableContainer>
       <Table>
         <thead>
-          <Tr>
+          <tr>
             <Th>S.No.</Th>
             <Th>Name</Th>
             <Th>Phone Number</Th>
@@ -36,11 +36,11 @@ const AllAppointmentsCount = () => {
             <Th>Time Schedule</Th>
             <Th>Date</Th>
             <Th>Actions</Th>
-          </Tr>
+          </tr>
         </thead>
         <tbody>
           {data.map((appointment, index) => (
-            <Tr key={appointment._id}>
+            <tr key={appointment._id}>
               <Td>{index + 1}</Td>
               <Td>{appointment.patientName}</Td>
               <Td>{appointment.phoneNumber}</Td>
@@ -51,7 +51,7 @@ const AllAppointmentsCount = () => {
                 <Update />
                 <Delete />
               </Td>
-            </Tr>
+            </tr>
           ))}
         </tbody>
       </Table>

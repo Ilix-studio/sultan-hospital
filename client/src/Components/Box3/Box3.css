@@ -1,14 +1,84 @@
-.container3{
-    display: flex;
-}
-.box-item3{
-    height: 200px;
-     width: 200px;
-     background-color: yellow;
-}
 
-.box-item4{
-    height: 200px;
-    width: 200px;
-    background-color: orange;
-}
+.photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.875rem 0.875rem;
+    background-color: #0369a1; 
+    border-radius: 0.7rem; 
+    height: 151px;
+    width: 151px;
+  }
+  
+  .photo-card-title {
+    font-size: 0.875rem; 
+    font-weight: 600; 
+    color: white; 
+    margin-top: -0.25rem; 
+  }
+  
+  .photo-card-image {
+    border-radius: 0.5rem; 
+    aspect-ratio: 1.2;
+    width: 125px;
+    margin-bottom: -0.5rem;
+  }
+  
+  .box3 {
+    display: flex;
+    gap: 1.25rem; 
+    justify-content: space-between; 
+    font-size: 0.875rem; 
+    color: white; 
+    white-space: nowrap; 
+  }
+  
+  .featured-image {
+    flex-shrink: 0; 
+    max-width: 100%; 
+    border-radius: 0.375rem; 
+    aspect-ratio: 0.84;
+    width: 129px;
+  }
+  @media (max-width: 768px) {
+    .box3 {
+      justify-content: center; 
+      gap: 1rem; 
+    }
+  
+    .photo-card,
+    .featured-image {
+      width: 100%; 
+      max-width: 190px; 
+    }
+  
+    .photo-card {
+      height: auto; 
+    }
+  
+    .photo-card-title {
+      font-size: 1rem; 
+    }
+  
+    .photo-card-image {
+      width: 100%; 
+      max-width: 300px; 
+      aspect-ratio: 1;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .box3 {
+      gap: 0.75rem; 
+    }
+  
+    .photo-card-title {
+      font-size: 1rem;
+    }
+  
+    .photo-card-image {
+      max-width: 200px;
+    }
+    
+  }
+ 
