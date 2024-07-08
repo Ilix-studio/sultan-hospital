@@ -46,15 +46,11 @@
 .input-container input[type="text"]:valid ~ .underline {
   transform: scaleX(1);
 }
-.sub-heading{
-  padding: 0px 20px;
-  margin-left: 10px;
-  text-align: center;
-}
+
 
 .main-container {
-  width: 400px;
-  height: 450px;
+  width: 90%;
+  height: 430px;
   margin: auto;
   flex-shrink: 0;
   border-radius: 8px;
@@ -62,16 +58,33 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.container {
-  display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-   /* Full viewport height */
+
+.rectangle-div {
+  display: block; /* Make the button a block element */
+  margin: 0 auto;
+  top: 5px;
+  width: 80%;
+  position: relative;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: #ce4141;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
 }
 
-.centered-div {
-  /* Any additional styling */
-  margin: 0px;
-  width: 30%;
+.make-an-appointment{
+position: relative;
+font-size: 16px;
+font-weight: 600;
+color: #fff;
+text-align: left;
+display: inline-block;
+text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
+.practice{
+  position: relative;
+  top: 40px;
+
+}
