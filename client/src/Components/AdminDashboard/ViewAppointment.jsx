@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { TableContainer, Table, Th, Td, Tr } from "./Dashboard-styled";
+import { TableContainer, Table, Th, Td } from "./Dashboard-styled";
 import Update from "./Update";
 import Delete from "./Delete";
 import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
@@ -9,9 +9,7 @@ const ViewAppointment = () => {
   const { axiosPrivate } = useAxiosInterceptor();
 
   const fetchAppointments = async () => {
-    const { data } = await axiosPrivate.get(
-      "http://localhost:5000/api/form/todays-appointments"
-    );
+    const { data } = await axiosPrivate.get("http://localhost:5000/api/");
     return data;
   };
 
@@ -27,7 +25,7 @@ const ViewAppointment = () => {
     <TableContainer>
       <Table>
         <thead>
-          <Tr>
+          <tr>
             <Th>S.No.</Th>
             <Th>Name</Th>
             <Th>Phone Number</Th>
@@ -35,11 +33,11 @@ const ViewAppointment = () => {
             <Th>Time Schedule</Th>
             <Th>Date</Th>
             <Th>Actions</Th>
-          </Tr>
+          </tr>
         </thead>
         <tbody>
           {data.map((appointment, index) => (
-            <Tr key={appointment._id}>
+            <tr key={appointment._id}>
               <Td>{index + 1}</Td>
               <Td>{appointment.patientName}</Td>
               <Td>{appointment.phoneNumber}</Td>
@@ -50,7 +48,7 @@ const ViewAppointment = () => {
                 <Update />
                 <Delete />
               </Td>
-            </Tr>
+            </tr>
           ))}
         </tbody>
       </Table>
