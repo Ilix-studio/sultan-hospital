@@ -1,38 +1,76 @@
-import React from 'react'
-import './Cardsstyle.css'
+import React, { useState } from 'react';
+import './Cardsstyle.css'; // Import your CSS file
 
-function Cards() {
+const InputContainer = () => {
+  const [inputValue, setInputValue] = useState('');
+
   return (
     <>
-      <div class="formInput">
-        <form action="">
-        <h1>MAKE AN APPOINTMENT</h1>
-        <div>
-        <label htmlFor=""></label>
-        <input type="text" placeholder='Your Full Name' />
-        </div>
-        <div>
-        <label htmlFor=""></label>
-        <input type="text" placeholder='Your Guardian Name' />
-        </div>
-        <div>
-        <label htmlFor=""></label>
-        <input type="text" placeholder='Your Phone Number' />
-        </div>
-        <div>
-        <label htmlFor=""></label>
-        <input type="text" placeholder='Select Date' />
-        </div>
-        <div>
-        <label htmlFor=""></label>
-        <input type="text" placeholder='Select Flexible Hour' />
-        </div>
-        <button>SUBMIT</button>
-        </form>
-       
-      </div>
+    <div className="main-container">
+    <div className='sub-heading'>
+    <h1>MAKE AN APPOINTMENT</h1>
+    </div>
+    <div className="input-container">
+      <input 
+        type="text" 
+        id="input" 
+        required 
+        value={inputValue} 
+        onChange={(e) => setInputValue(e.target.value)} 
+      />
+      <label htmlFor="input" className={`label ${inputValue && 'filled'}`}>Patient Name</label>
+      <div className="underline"></div>
+    </div>
+    <div className="input-container">
+      <input 
+        type="text" 
+        id="input" 
+        required 
+        value={inputValue} 
+        onChange={(e) => setInputValue(e.target.value)} 
+      />
+      <label htmlFor="input" className={`label ${inputValue && 'filled'}`}>Your Phone Number</label>
+      <div className="underline"></div>
+    </div>
+    <div className="input-container">
+      <input 
+        type="text" 
+        id="input" 
+        required 
+        value={inputValue} 
+        onChange={(e) => setInputValue(e.target.value)} 
+      />
+      <label htmlFor="input" className={`label ${inputValue && 'filled'}`}>Select Your Flexible Hour</label>
+      <div className="underline"></div>
+    </div>
+    <div className="input-container">
+      <input 
+        type="text" 
+        id="input" 
+        required 
+        value={inputValue} 
+        onChange={(e) => setInputValue(e.target.value)} 
+      />
+      <label htmlFor="input" className={`label ${inputValue && 'filled'}`}>Select Date</label>
+      <div className="underline"></div>
+    </div>
+    <div className="input-container">
+      <input 
+        type="text" 
+        id="input" 
+        required 
+        value={inputValue} 
+        onChange={(e) => setInputValue(e.target.value)} 
+      />
+      <label htmlFor="input" className={`label ${inputValue && 'filled'}`}>Select Doctor</label>
+      <div className="underline"></div>
+    </div>
+    <div class="container">
+    <button class="centered-div" >SUBMIT</button>
+    </div>
+    </div>
     </>
   );
-}
+};
 
-export default Cards
+export default InputContainer ;
