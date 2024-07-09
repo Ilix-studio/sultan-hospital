@@ -36,9 +36,8 @@ const AdminDashboard = () => {
         <CardContainer>
           <Card>
             <CardContent>
-              <Count>94</Count>
+              <Count>create</Count>
             </CardContent>
-            <Description>Total</Description>
           </Card>
           <Card>
             <CardContent>

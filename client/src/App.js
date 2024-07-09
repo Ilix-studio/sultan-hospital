@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 
 import AdminDashboard from "./Components/AdminDashboard/AdminDashboard";
 import ViewAppointment from "./Components/AdminDashboard/ViewAppointment";
-import CreateAppointment from "./Components/AdminDashboard/CreateAppointment";
 
 import NoMatch from "./Components/NoMatch";
 import TodaysTotalAppointments from "./Components/AdminDashboard/TodaysTotalAppointments";
@@ -13,6 +12,8 @@ import LoginPage from "./Components/LoginPage/LoginPage";
 import GlobalStyles from "./Components/Styles/GLobal";
 import Home from "./Components/Home";
 
+import AppointmentForm from "./Components/FormAppointment/AppointmentForm";
+
 const App = () => {
   return (
     <>
@@ -22,14 +23,13 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
 
         <Route path="/adminDashboard" element={<AdminDashboard />}>
-          <Route path="create" element={<CreateAppointment />} />
-          <Route index element={<TodaysTotalAppointments />} />
+          <Route path="create" element={<AppointmentForm />} />
 
+          <Route index element={<TodaysTotalAppointments />} />
           <Route path="totalapps" element={<TodaysTotalAppointments />} />
           <Route index element={<TodaysTotalAppointments />} />
 
           <Route path="allAppoint" element={<AllAppointmentsCount />} />
-          <Route index element={<AllAppointmentsCount />} />
 
           <Route path="viewTodays" element={<ViewAppointment />}>
             <Route path="update" element={<Update />} />
