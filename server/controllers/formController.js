@@ -5,7 +5,7 @@ import Appointment from "../models/appointmentModel.js";
 // GET Request - /api/form/todays-appointments
 // Private
 const viewTodaysAppointments = asyncHandler(async (req, res) => {
-  const today = new Date().toISOString().split('T')[0]; 
+  const today = new Date().toISOString().split("T")[0];
   let query = Appointment.find().where("date").equals(today);
 
   const todaysAppointments = await query.exec();
@@ -46,27 +46,15 @@ const viewAppointment = asyncHandler(async (req, res) => {
 //Public
 
 const createAppointment = asyncHandler(async (req, res) => {
-  const {
-    patientName,
-    phoneNumber,
-    timeSchedule,
-    date,
-  } = req.body;
+  const { patientName, phoneNumber } = req.body;
 
   // Confirm data
-  if (
-    !patientName ||
-    !date ||
-    !phoneNumber ||
-    !timeSchedule
-  ) {
+  if (!patientName || !phoneNumber) {
     return res.status(400).json({ message: "All fields are required" });
   }
   const newAppointment = new Appointment({
     patientName,
     phoneNumber,
-    timeSchedule,
-    date,
   });
   const appointmentCreated = await newAppointment.save();
   res.status(201).json(appointmentCreated);
@@ -82,12 +70,7 @@ const createAppointment = asyncHandler(async (req, res) => {
 //private
 const updateAppointment = asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const {
-    patientName,
-    phoneNumber,
-    timeSchedule,
-    date,
-  } = req.body;
+  const { patientName, phoneNumber, timeSchedule, date } = req.body;
   const appointment = await Appointment.findOneAndUpdate(
     { _id: id },
     {
