@@ -39,14 +39,14 @@
   width: 100%;
   background-color: #333;
   transform: scaleX(0);
-  transition: all 0.3s ease;                          
+  transition: all 0.3s ease;
 }
 
 .input-container input[type="text"]:focus ~ .underline,
 .input-container input[type="text"]:valid ~ .underline {
   transform: scaleX(1);
 }
-.sub-heading{
+.sub-heading {
   padding: 0px 20px;
   margin-left: 10px;
   text-align: center;
@@ -58,7 +58,7 @@
   margin: auto;
   flex-shrink: 0;
   border-radius: 8px;
-  background: var(--blue, #0d567e);
+  /* background: var(--blue, #0d567e); */
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -66,7 +66,7 @@
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically */
-   /* Full viewport height */
+  /* Full viewport height */
 }
 
 .centered-div {
@@ -74,4 +74,3 @@
   margin: 0px;
   width: 30%;
 }
-

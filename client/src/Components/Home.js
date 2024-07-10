@@ -8,18 +8,23 @@ import Navbar from "./Navbar/Navbar";
 import GlobalStyles from "./Styles/GLobal";
 
 const Home = () => {
-    return (
-      <>
-        <GlobalStyles />
-        <Navbar />
+  return (
+    <>
+      <GlobalStyles />
+
+      <Navbar />
+      <div className="flex w-4/5 mx-auto mt-28">
         <Heading />
         <Cards />
-        <Box />
+      </div>
+      <Box />
+      <div className="flex justify-around mt-20 mb-10">
         <Box1 />
         <Box2 />
-        <Box3 />
-      </>
-    );
-  };
-  
-  export default Home;
+      </div>
+      <Box3 />
+    </>
+  );
+};
+
+export default Home;
