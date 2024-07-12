@@ -1,17 +1,17 @@
-import React from 'react';
-import './Box1.css';
+import React from "react";
+import "./Box1.css";
 
 const Box1 = () => {
   const departments = [
-    '24/7 EMERGENCY MEDICAL SURVICE',
-    'AFFORDABLE TREATMENT AND TEST',
-    'SPECIAL OFFER ON FULL BODY CHECKUP',
-    'QUALITY PROFESSIONAL HIGHER ONLY',
-    'QUALIFIED EXPERTS IN THERIR FIELD',
+    "24/7 EMERGENCY MEDICAL SURVICE",
+    "AFFORDABLE TREATMENT AND TEST",
+    "SPECIAL OFFER ON FULL BODY CHECKUP",
+    "QUALITY PROFESSIONAL HIGHER ONLY",
+    "QUALIFIED EXPERTS IN THERIR FIELD",
   ];
 
   return (
-    <div className="container1">
+    <div className="container1 w-2/5">
       <div className="title-row1">
         <h1 className="title1">WHY SULTAN HOSPITAL ?</h1>
       </div>
