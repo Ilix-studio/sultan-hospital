@@ -12,12 +12,13 @@ const Home = () => {
     <>
       <Navbar />
       <Heading />
+
       <Cards />
+
       <Box1 />
       <Box2 />
       <Box3 />
       <Footer />
-      <GlobalStyles />
     </>
   );
 };
