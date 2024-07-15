@@ -1,11 +1,11 @@
 import React from "react";
 import "./Heading.css";
-import { Container } from "../AdminDashboard/Dashboard-styled";
+
 // import AppointmentForm from "../FormAppointment/AppointmentForm";
 const Heading = () => {
   return (
     <>
-      <Container>
+    
         <div className="flex-heading">
           <div class="leading-healthcare-excellence-container">
             <h1 class="leading-healthcare">
@@ -17,7 +17,7 @@ const Heading = () => {
           </div>
           {/* <AppointmentForm /> */}
         </div>
-      </Container>
+    
     </>
   );
 };
