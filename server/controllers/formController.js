@@ -45,25 +45,83 @@ const viewAppointment = asyncHandler(async (req, res) => {
 //POST Request - /api/form/create
 //Public
 
-const createAppointment = asyncHandler(async (req, res) => {
-  const { patientName, phoneNumber } = req.body;
+// const createAppointment = asyncHandler(async (req, res) => {
+//   const { patientName, phoneNumber, date, timeSchedule } = req.body;
 
-  // Confirm data
-  if (!patientName || !phoneNumber) {
+//   // Validate required fields
+//   if (!patientName || !phoneNumber || !date || !timeSchedule) {
+//     return res.status(400).json({ message: "All fields are required" });
+//   }
+
+//   try {
+//     const newAppointment = new Appointment({
+//       patientName,
+//       phoneNumber,
+//       date,
+//       timeSchedule,
+//     });
+
+//     const appointmentCreated = await newAppointment.save();
+
+//     if (!appointmentCreated) {
+//       throw new Error("Failed to save appointment");
+//     }
+
+//     res.status(201).json(appointmentCreated);
+//   } catch (error) {
+//     res.status(500).json({ message: `Failed to create appointment: ${error.message}` });
+//   }
+// });
+
+const createAppointment = asyncHandler(async (req, res) => {
+  const { patientName, phoneNumber, date, timeSchedule } = req.body;
+
+  // Validate required fields
+  if (!patientName || !phoneNumber || !date || !timeSchedule) {
     return res.status(400).json({ message: "All fields are required" });
   }
-  const newAppointment = new Appointment({
-    patientName,
-    phoneNumber,
-  });
-  const appointmentCreated = await newAppointment.save();
-  res.status(201).json(appointmentCreated);
 
-  if (!appointmentCreated) {
-    res.status(500);
-    throw new Error("problem with database or mongoose code");
+  try {
+    // Extract only the date part (ignoring time) for comparison
+    const startOfDay = new Date(date);
+    startOfDay.setUTCHours(0, 0, 0, 0);
+
+    const endOfDay = new Date(date);
+    endOfDay.setUTCHours(23, 59, 59, 999);
+
+    // Check if an appointment already exists for the same phone number and date
+    const existingAppointment = await Appointment.findOne({
+      phoneNumber,
+      date: {
+        $gte: startOfDay,
+        $lte: endOfDay
+      }
+    });
+
+    if (existingAppointment) {
+      return res.status(400).json({ message: "An appointment already exists for this date and phone number" });
+    }
+
+    const newAppointment = new Appointment({
+      patientName,
+      phoneNumber,
+      date,
+      timeSchedule,
+    });
+
+    const appointmentCreated = await newAppointment.save();
+
+    if (!appointmentCreated) {
+      throw new Error("Failed to save appointment");
+    }
+
+    res.status(201).json(appointmentCreated);
+  } catch (error) {
+    res.status(500).json({ message: `Failed to create appointment: ${error.message}` });
   }
 });
+
+
 
 //update an appointment
 //PUT Request - /api/form/update
