@@ -1,10 +1,11 @@
-import styled from 'styled-components';
-import DatePicker from 'react-datepicker'; // Import the date picker library
-import 'react-datepicker/dist/react-datepicker.css';
+import styled from "styled-components";
+import DatePicker from "react-datepicker"; // Import the date picker library
+import "react-datepicker/dist/react-datepicker.css";
 
 export const AppointmentFormStyled = styled.form`
   border-radius: 20px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25), 2px 4px 8px #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25),
+    2px 4px 8px #fff;
   border: 1px solid #ce4141;
   background-color: #fff;
   display: flex;
@@ -45,7 +46,7 @@ export const InputLabelStyled = styled.input`
   border-bottom: 2px solid #000000; /* Add bottom border */
   outline: none; /* Remove the default outline on focus */
   max-width: 210px;
-  
+
   &:focus {
     border-bottom-color: #ce4141; /* Ensure the bottom border color remains on focus */
   }
@@ -64,6 +65,9 @@ export const SubmitButtonStyled = styled.button`
   font: 600 16px Open Sans, sans-serif; /* Increase the font size */
   border: none;
   cursor: pointer;
+  &:hover {
+    background-color: #399918;
+  }
 `;
 
 export const SelectStyled = styled.select`
@@ -77,7 +81,7 @@ export const SelectStyled = styled.select`
   border-bottom: 2px solid #000000; /* Add a bottom border only */
   outline: none; /* Remove the default outline on focus */
   max-width: 210px;
-  
+
   &:focus {
     border-bottom-color: #ce4141; /* Change bottom border color on focus */
   }
@@ -99,7 +103,7 @@ export const CustomDatePicker = styled(DatePicker)`
   border-bottom: 2px solid #000000;
   outline: none;
   max-width: 210px;
-  
+
   &:focus {
     border-bottom-color: #ce4141;
   }
