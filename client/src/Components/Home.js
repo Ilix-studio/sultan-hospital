@@ -7,17 +7,21 @@ import Navbar from "./Navbar/Navbar";
 
 import Footer from "./Footer/Footer";
 
+import "./home.css";
+
 const Home = () => {
   return (
     <>
       <Navbar />
       <Heading />
       <Cards />
-      <Box1 />
-      <Box2 />
+      <div className="features-and-departments">
+        <Box1 />
+        <Box2 />
+      </div>
       <Box3 />
       <Footer />
-      <GlobalStyles />
+      {/* <GlobalStyles /> */}
     </>
   );
 };

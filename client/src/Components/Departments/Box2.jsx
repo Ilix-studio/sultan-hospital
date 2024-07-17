@@ -25,21 +25,26 @@ const Box2 = () => {
   };
 
   return (
-    <div className="container w-2/5">
-      <div className="title-row">
-        <h1 className="title">DEPARTMENTS</h1>
-      </div>
-      {departments.map((department, index) => (
-        <div
-          className="department-row"
-          key={index}
-          onClick={() => handleDepartmentClick(department)}
-        >
-          <div className="department-background" />
-          <div className="department-name">{department}</div>
+    <>
+      <div className="department-main">
+        <div className="container-bg1"></div>
+        <div className="container">
+          <div className="title-row">
+            <h1 className="title">DEPARTMENTS</h1>
+          </div>
+          {departments.map((department, index) => (
+            <div
+              className="department-row"
+              key={index}
+              onClick={() => handleDepartmentClick(department)}
+            >
+              <div className="department-background" />
+              <div className="department-name">{department}</div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 };
 
