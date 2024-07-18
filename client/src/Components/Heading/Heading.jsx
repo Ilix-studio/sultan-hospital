@@ -1,10 +1,10 @@
-import React from "react";
-import "./Heading.css";
+import React from 'react'
+import './Heading.css'
 
-import AppForm from "../Appointment/appForm";
+import AppForm from '../Appointment/appForm'
 const textStyle = {
-  color: "#ce4141",
-};
+  color: '#ce4141',
+}
 const Heading = () => {
   return (
     <div className="heading-container">
@@ -18,7 +18,7 @@ const Heading = () => {
         <AppForm />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Heading;
+export default Heading

@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Delete = () => {
-  return <div>Delete</div>;
-};
+  return <div>Delete</div>
+}
 
-export default Delete;
+export default Delete

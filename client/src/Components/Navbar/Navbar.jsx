@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import {
   Header,
   Nav,
@@ -7,15 +7,15 @@ import {
   NavLogo,
   NavMenu,
   NavToggle,
-} from "./Navbar-Style.js";
-import { RiCloseLine, RiMenuLine } from "react-icons/ri";
-import { MdOutlineHealthAndSafety } from "react-icons/md";
+} from './Navbar-Style.js'
+import { RiCloseLine, RiMenuLine } from 'react-icons/ri'
+import { MdOutlineHealthAndSafety } from 'react-icons/md'
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   return (
     <Header>
@@ -36,7 +36,7 @@ const Navbar = () => {
         </NavMenu>
       </Nav>
     </Header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

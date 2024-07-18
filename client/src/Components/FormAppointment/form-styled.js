@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column; /* Arrange elements vertically */
@@ -6,18 +6,18 @@ const FormContainer = styled.form`
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-`;
+`
 
 const Label = styled.label`
   margin-bottom: 10px; /* Add spacing between labels */
-`;
+`
 
 const Input = styled.input`
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 15px;
-`;
+`
 
 const SubmitButton = styled.button`
   /* Set the type attribute */
@@ -31,6 +31,6 @@ const SubmitButton = styled.button`
   &:hover {
     background-color: #3e8e41;
   }
-`;
+`
 
-export { FormContainer, Label, Input, SubmitButton };
+export { FormContainer, Label, Input, SubmitButton }

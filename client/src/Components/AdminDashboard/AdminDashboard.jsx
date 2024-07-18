@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom'
 import {
   Container,
   Header,
@@ -10,7 +10,7 @@ import {
   CardContent,
   Count,
   Description,
-} from "./Dashboard-styled";
+} from './Dashboard-styled'
 
 // import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
 
@@ -56,9 +56,9 @@ const AdminDashboard = () => {
 
       <Outlet />
     </>
-  );
-};
+  )
+}
 
-export default AdminDashboard;
+export default AdminDashboard
 
 //create new route in backend to view todays appointment by date

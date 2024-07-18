@@ -1,18 +1,18 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom'
 
-import AdminDashboard from "./Components/AdminDashboard/AdminDashboard";
-import ViewAppointment from "./Components/AdminDashboard/ViewAppointment";
+import AdminDashboard from './Components/AdminDashboard/AdminDashboard'
+import ViewAppointment from './Components/AdminDashboard/ViewAppointment'
 
-import NoMatch from "./Components/NoMatch";
-import TodaysTotalAppointments from "./Components/AdminDashboard/TodaysTotalAppointments";
-import AllAppointmentsCount from "./Components/AdminDashboard/AllAppointmentsCount";
-import Update from "./Components/AdminDashboard/Update";
-import Delete from "./Components/AdminDashboard/Delete";
-import LoginPage from "./Components/LoginPage/LoginPage";
-import GlobalStyles from "./Components/Styles/GLobal";
-import Home from "./Components/Home";
+import NoMatch from './Components/NoMatch'
+import TodaysTotalAppointments from './Components/AdminDashboard/TodaysTotalAppointments'
+import AllAppointmentsCount from './Components/AdminDashboard/AllAppointmentsCount'
+import Update from './Components/AdminDashboard/Update'
+import Delete from './Components/AdminDashboard/Delete'
+import LoginPage from './Components/LoginPage/LoginPage'
+import GlobalStyles from './Components/Styles/GLobal'
+import Home from './Components/Home'
 
-import AppointmentForm from "./Components/FormAppointment/AppointmentForm";
+import AppointmentForm from './Components/FormAppointment/AppointmentForm'
 
 const App = () => {
   return (
@@ -40,7 +40,7 @@ const App = () => {
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
