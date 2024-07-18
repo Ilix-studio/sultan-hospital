@@ -1,27 +1,24 @@
-import React from "react";
-import { Container, TableContainer, Table, Th, Td } from "./Dashboard-styled";
-import { useQuery } from "react-query";
-import Update from "./Update";
-import Delete from "./Delete";
-import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
+import React from 'react'
+import { Container, TableContainer, Table, Th, Td } from './Dashboard-styled'
+import { useQuery } from 'react-query'
+import Update from './Update'
+import Delete from './Delete'
+import useAxiosInterceptor from '../../hooks/useAxiosInterceptor'
 
 const TodaysTotalAppointments = () => {
-  const { axiosPrivate } = useAxiosInterceptor();
+  const { axiosPrivate } = useAxiosInterceptor()
 
   const fetchAppointments = async () => {
     const { data } = await axiosPrivate.get(
-      "http://localhost:5000/api/form/view"
-    );
-    return data;
-  };
+      'http://localhost:5000/api/form/view',
+    )
+    return data
+  }
 
-  const { data, error, isLoading } = useQuery(
-    "appointments",
-    fetchAppointments
-  );
+  const { data, error, isLoading } = useQuery('appointments', fetchAppointments)
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>Error: {error.message}</div>
   //add react hot toast to show error message
   return (
     <Container>
@@ -57,7 +54,7 @@ const TodaysTotalAppointments = () => {
         </Table>
       </TableContainer>
     </Container>
-  );
-};
+  )
+}
 
-export default TodaysTotalAppointments;
+export default TodaysTotalAppointments

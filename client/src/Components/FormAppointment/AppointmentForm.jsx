@@ -1,47 +1,47 @@
-import { useState } from "react";
-import axios from "axios";
-import { FormContainer, Label, Input, SubmitButton } from "./form-styled";
-import { useMutation } from "react-query";
-import toast from "react-hot-toast";
-import { Toaster } from "react-hot-toast";
+import { useState } from 'react'
+import axios from 'axios'
+import { FormContainer, Label, Input, SubmitButton } from './form-styled'
+import { useMutation } from 'react-query'
+import toast from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 
-const AppointEndpoint = "http://localhost:5000/api/form/create";
+const AppointEndpoint = 'http://localhost:5000/api/form/create'
 
 const form = async ({ patientName, phoneNumber }) => {
   const response = await axios.post(
     AppointEndpoint,
     JSON.stringify({ patientName, phoneNumber }),
     {
-      headers: { "Content-Type": "application/json" },
-    }
-  );
-  return response.data;
-};
+      headers: { 'Content-Type': 'application/json' },
+    },
+  )
+  return response.data
+}
 
 const AppointmentForm = () => {
-  const [patientName, setPatientName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [errorMsg, setError] = useState("");
+  const [patientName, setPatientName] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [errorMsg, setError] = useState('')
 
   const { mutate, isLoading, error } = useMutation(form, {
     onSuccess: (data) => {
-      setPatientName("");
-      setPhoneNumber("");
-      toast.success("Appointment created successfully");
+      setPatientName('')
+      setPhoneNumber('')
+      toast.success('Appointment created successfully')
     },
     onError: (error) => {
       if (!error.response) {
-        setError("No Server Response");
+        setError('No Server Response')
       } else if (error.response?.status === 400) {
-        toast.error("Something is wrong");
+        toast.error('Something is wrong')
       }
     },
-  });
+  })
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    mutate({ patientName, phoneNumber });
-  };
+    e.preventDefault()
+    mutate({ patientName, phoneNumber })
+  }
 
   return (
     <>
@@ -72,6 +72,6 @@ const AppointmentForm = () => {
       {mutate.isLoading && <p>Loading</p>}
       <Toaster position="top-center" reverseOrder={false} />
     </>
-  );
-};
-export default AppointmentForm;
+  )
+}
+export default AppointmentForm

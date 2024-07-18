@@ -1,5 +1,5 @@
-import React from 'react';
-import './Box1.css';
+import React from 'react'
+import './Box1.css'
 
 const Box1 = () => {
   const departments = [
@@ -8,7 +8,7 @@ const Box1 = () => {
     'SPECIAL OFFER ON FULL BODY CHECKUP',
     'QUALITY PROFESSIONAL HIGHER ONLY',
     'QUALIFIED EXPERTS IN THERIR FIELD',
-  ];
+  ]
 
   return (
     <div className="container1">
@@ -22,7 +22,7 @@ const Box1 = () => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Box1;
+export default Box1
