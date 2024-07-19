@@ -1,3 +1,4 @@
+
 import HealthServices from "./HealthServices/HealthServices";
 import Departments from "./Departments/Departments";
 import BottomContainer from "./BottomContainer/BottomContainer";
@@ -7,6 +8,9 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import AppForm from "./Appointment/appForm";
 
+
+
+import Footer from './Footer/Footer'
 
 const Home = () => {
   return (
@@ -20,7 +24,7 @@ const Home = () => {
       <BottomContainer />
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

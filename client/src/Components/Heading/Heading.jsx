@@ -1,25 +1,26 @@
-import React from "react";
-import "./Heading.css";
 
-// import AppointmentForm from "../FormAppointment/AppointmentForm";
+import React from 'react'
+import './Heading.css'
+
+import AppForm from '../Appointment/appForm'
+const textStyle = {
+  color: '#ce4141',
+}
 const Heading = () => {
   return (
-    <>
-    
-        <div className="flex-heading">
-          <div class="leading-healthcare-excellence-container">
-            <h1 class="leading-healthcare">
-              <span class="leading">Leading </span>
-              <span>Healthcare</span>
-            </h1>
-            <h1 class="excellence-in">Excellence in </h1>
-            <h1 class="excellence-in">Morigaon</h1>
-          </div>
-          {/* <AppointmentForm /> */}
-        </div>
-    
-    </>
-  );
-};
+    <div className="heading-container">
+      <div className="heading-text">
+        <h1>
+          Leading <strong style={textStyle}> HealthCare</strong> Excellence in
+          <br /> Morigaon
+        </h1>
+      </div>
+      <div className="form-container">
+        <AppForm />
+      </div>
+    </div>
+  )
+}
 
-export default Heading;
+
+export default Heading

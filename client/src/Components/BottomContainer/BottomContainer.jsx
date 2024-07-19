@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Bottom-container.css";
+import "./Box3.css";
 import { Link } from "react-router-dom";
 
 function PhotoCard({ images }) {
@@ -34,7 +34,7 @@ function Box3() {
     "https://images.unsplash.com/photo-1720188228786-e6cb3b668aef?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://plus.unsplash.com/premium_photo-1671512497536-e20cc1084ea7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   ];
-   
+
   return (
     <section className="box3">
       <PhotoCard images={photos} />

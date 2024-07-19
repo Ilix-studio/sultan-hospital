@@ -1,15 +1,14 @@
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 const Header = styled.header`
   width: 100%;
   background-color: #fff;
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
+  position: relative;
   z-index: 1000;
-`;
+`
 
 const Nav = styled.nav`
   max-width: 1200px;
@@ -18,12 +17,12 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-`;
+`
 
 const NavData = styled.div`
   display: flex;
   align-items: center;
-`;
+`
 
 const NavLogo = styled(NavLink)`
   display: flex;
@@ -35,7 +34,7 @@ const NavLogo = styled(NavLink)`
   i {
     margin-right: 0.5rem;
   }
-`;
+`
 
 const NavToggle = styled.div`
   display: none;
@@ -45,13 +44,13 @@ const NavToggle = styled.div`
     display: block;
     float: right;
   }
-`;
+`
 
 const NavMenu = styled.div`
   display: flex;
 
   @media (max-width: 768px) {
-    display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
     position: absolute;
     top: 100%;
     left: 0;
@@ -59,7 +58,7 @@ const NavMenu = styled.div`
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-`;
+`
 
 const NavItem = styled(NavLink)`
   margin-left: 2rem;
@@ -77,6 +76,6 @@ const NavItem = styled(NavLink)`
     text-align: center;
     margin-left: 0;
   }
-`;
+`
 
-export { Header, Nav, NavData, NavLogo, NavToggle, NavMenu, NavItem };
+export { Header, Nav, NavData, NavLogo, NavToggle, NavMenu, NavItem }
