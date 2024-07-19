@@ -3,7 +3,7 @@ import "./Box1.css";
 
 const Box1 = () => {
   const features = [
-    "24/7 EMERGENCY MEDICAL SURVICE",
+    "24/7 EMERGENCY MEDICAL SERVICE",
     "AFFORDABLE TREATMENT AND TEST",
     "SPECIAL OFFER ON FULL BODY CHECKUP",
     "QUALITY PROFESSIONAL HIGHER ONLY",
@@ -19,10 +19,12 @@ const Box1 = () => {
             <h1 className="title1">WHY SULTAN HOSPITAL ?</h1>
           </div>
           {features.map((feature, index) => (
-            <div className="feature-row1" key={index}>
-              <div className="feature-background1"></div>
-              <div className="feature-name1">{feature}</div>
-            </div>
+            <>
+              <div className="feature-row1" key={index}>
+                <div className="feature-name1">{feature}</div>
+                <div className="feature-background1"></div>
+              </div>
+            </>
           ))}
         </div>
       </div>
