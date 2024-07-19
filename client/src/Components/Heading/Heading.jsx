@@ -1,4 +1,3 @@
-
 import React from 'react'
 import './Heading.css'
 
@@ -21,6 +20,5 @@ const Heading = () => {
     </div>
   )
 }
-
 
 export default Heading

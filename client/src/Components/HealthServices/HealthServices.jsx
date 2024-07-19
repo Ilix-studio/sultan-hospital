@@ -1,7 +1,5 @@
-
-import React from 'react';
-import './Health-services.css';
-
+import React from 'react'
+import './Health-services.css'
 
 const Box1 = () => {
   const departments = [

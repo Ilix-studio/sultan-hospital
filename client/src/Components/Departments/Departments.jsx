@@ -1,7 +1,6 @@
-
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Departments.css';
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import './Departments.css'
 
 const Box2 = () => {
   const navigate = useNavigate()
