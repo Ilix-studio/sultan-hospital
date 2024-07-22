@@ -8,12 +8,15 @@ body {
   
     font-family: "Open Sans", sans-serif;
     font-size: .940rem;
-    background-color: white;
+    background-color: hsl(200, 100%,97%);
     line-height: normal;
   }
   ul {
 
     background-color: white;
+}
+ul {
+
     list-style: none;
 }
 `

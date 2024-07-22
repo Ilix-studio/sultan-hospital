@@ -1,5 +1,5 @@
 import React from 'react'
-import './Box1.css'
+import './Health-services.css'
 
 const Box1 = () => {
   const departments = [

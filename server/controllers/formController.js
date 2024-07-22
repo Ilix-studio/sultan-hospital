@@ -99,12 +99,9 @@ const createAppointment = asyncHandler(async (req, res) => {
     })
 
     if (existingAppointment) {
-      return res
-        .status(400)
-        .json({
-          message:
-            'An appointment already exists for this date and phone number',
-        })
+      return res.status(400).json({
+        message: 'An appointment already exists for this date and phone number',
+      })
     }
 
     const newAppointment = new Appointment({
