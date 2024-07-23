@@ -1,10 +1,10 @@
-import React from "react";
-import "./Footer.css";
-import logo from "../../assets/IgmHF301-svg-1-1.png";
-import { Link } from "react-router-dom";
+import React from 'react'
+import './Footer.css'
+
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
-  const quicklinks = ["Home", "About Us", "Services", "Contact Us"];
+  const quicklinks = ['Home', 'About Us', 'Services', 'Contact Us']
   return (
     <>
       <div className="footer">
@@ -18,11 +18,11 @@ const Footer = () => {
               return (
                 <Link
                   to={
-                    link === "Home"
-                      ? "/"
-                      : link === "About Us"
-                      ? "/about"
-                      : link
+                    link === 'Home'
+                      ? '/'
+                      : link === 'About Us'
+                        ? '/about'
+                        : link
                   }
                   key={index}
                   className="quicklinks-items"
@@ -32,13 +32,13 @@ const Footer = () => {
 
                   {/* </h4> */}
                 </Link>
-              );
+              )
             })}
           </div>
           <div className="footer-right">
             <h3 className="footer-contact-info">Contact Info</h3>
             <p className="footer-address">
-              Moidhali pathar, Domal Road, <br /> Morigaon, Assam, 782105{" "}
+              Moidhali pathar, Domal Road, <br /> Morigaon, Assam, 782105{' '}
             </p>
             <p className="footer-phone">+91-8822686715, +91-9435201000</p>
             <p className="footer-email">sultanhospital2017@gmail.com</p>
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

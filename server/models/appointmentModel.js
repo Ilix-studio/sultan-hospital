@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const appointmentSchema = mongoose.Schema(
   {
@@ -9,15 +9,19 @@ const appointmentSchema = mongoose.Schema(
     phoneNumber: {
       type: String,
       required: true,
-    },
-    timeSchedule: {
-      type: String,
+      // unique: true,
+      // length: [10, "enter a valid phone number"],
     },
     date: {
       type: Date,
+      required: true,
+    },
+    timeSchedule: {
+      type: String,
+      required: true,
     },
   },
-  { timestamps: true }
-);
-const Appointment = mongoose.model("Appointment", appointmentSchema);
-export default Appointment;
+  { timestamps: true },
+)
+const Appointment = mongoose.model('Appointment', appointmentSchema)
+export default Appointment
