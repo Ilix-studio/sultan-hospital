@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Box3.css'
+import { Link } from 'react-router-dom'
 
 function PhotoCard({ images }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
