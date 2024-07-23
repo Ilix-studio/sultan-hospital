@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './Box3.css'
+import './Bottom-container.css'
 import { Link } from 'react-router-dom'
 
 function PhotoCard({ images }) {

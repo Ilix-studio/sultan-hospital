@@ -28,11 +28,11 @@ const LoginPage = () => {
 
   const { mutate, isLoading, error } = useMutation(login, {
     onSuccess: (data) => {
-      const accessToken = data?.accessToken
-      setAuth({ email, password, accessToken })
-      setEmail('')
-      setPassword('')
-      navigate('/adminDashboard')
+      const accessToken = data?.accessToken;
+      setAuth({ accessToken });
+      setEmail("");
+      setPassword("");
+      navigate("/adminDashboard");
     },
     onError: (error) => {
       if (!error.response) {
@@ -61,7 +61,7 @@ const LoginPage = () => {
             type="email"
             placeholder="Email"
             value={email}
-            autocomplete="email"
+            autoComplete="email"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -77,7 +77,7 @@ const LoginPage = () => {
           </Button>
         </form>
         {error && <p>{errorMsg}</p>}
-        {mutate.isLoading && <p>Loading</p>}
+        {isLoading && <p>Loading</p>}
       </FormWrapper>
     </Container>
   )

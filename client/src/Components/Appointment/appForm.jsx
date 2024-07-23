@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import { useMutation } from 'react-query'
-import toast, { Toaster } from 'react-hot-toast'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useMutation } from "react-query";
+import toast, { Toaster } from "react-hot-toast";
 import {
   AppointmentFormStyled,
   InputGroupStyled,
@@ -56,9 +56,15 @@ const InputGroup = ({
   }
 
   const handleInputChange = (event) => {
-    onChange(id, event.target.value)
-    if (type === 'tel') setIsTouched(true) // Set the touched flag to true when the input is changed
-  }
+    const newValue = event.target.value;
+    if (id === "fullName" && newValue.length > 40) {
+      return;
+    }
+  
+    onChange(id, newValue);
+    if (type === "tel") setIsTouched(true); // Set the touched flag to true when the input is changed
+  };
+  
 
   return (
     <div>

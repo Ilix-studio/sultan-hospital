@@ -58,3 +58,4 @@ const TodaysTotalAppointments = () => {
 }
 
 export default TodaysTotalAppointments
+
