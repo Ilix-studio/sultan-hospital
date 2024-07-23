@@ -9,8 +9,6 @@ const appointmentSchema = mongoose.Schema(
     phoneNumber: {
       type: String,
       required: true,
-      // unique: true,
-      // length: [10, "enter a valid phone number"],
     },
     date: {
       type: Date,

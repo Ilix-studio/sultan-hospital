@@ -1,12 +1,9 @@
-// Attach interceptor to axios instance
+import axios from "axios";
+import { useEffect } from "react";
+import useRefreshToken from "./useRefreshToken";
+import useAuth from "./useAuth";
 
-import axios from 'axios'
-import { useEffect } from 'react'
-import useRefreshToken from './useRefreshToken'
-import useAuth from './useAuth'
-
-//in login ?
-const URL = 'http://localhost:5000'
+const URL = "http://localhost:5000";
 
 export const axiosPrivate = axios.create({
   baseURL: URL,
@@ -21,8 +18,11 @@ const useAxiosInterceptor = () => {
   useEffect(() => {
     const requestIntercept = axiosPrivate.interceptors.request.use(
       (config) => {
-        if (!config.headers['Authorization']) {
-          config.headers['Authorization'] = `Bearer ${auth?.accessToken}`
+        if (!config.headers["Authorization"]) {
+          const accessToken = auth?.accessToken || localStorage.getItem("accessToken");
+          if (accessToken) {
+            config.headers["Authorization"] = `Bearer ${accessToken}`;
+          }
         }
         return config
       },
@@ -34,14 +34,16 @@ const useAxiosInterceptor = () => {
       async (error) => {
         const prevRequest = error?.config
         if (error?.response?.status === 403 && !prevRequest?.sent) {
-          prevRequest.sent = true
-          const newAccessToken = await refresh()
-          prevRequest.headers['Authorization'] = `Bearer ${newAccessToken}`
-          return axiosPrivate(prevRequest)
+          prevRequest.sent = true;
+          const newAccessToken = await refresh();
+          localStorage.setItem("accessToken", newAccessToken);
+          prevRequest.headers["Authorization"] = `Bearer ${newAccessToken}`;
+          return axiosPrivate(prevRequest);
         }
-        return Promise.reject(error)
-      },
-    )
+        return Promise.reject(error);
+      }
+    );
+
     return () => {
       axiosPrivate.interceptors.request.eject(requestIntercept)
       axiosPrivate.interceptors.response.eject(responseIntercept)
@@ -53,6 +55,4 @@ const useAxiosInterceptor = () => {
   }
 }
 
-export default useAxiosInterceptor
-
-// Axios interceptors are functions that Axios calls for every request and response. These interceptors can be used to modify the request or response, handle errors, or add additional functionality like authentication tokens, logging, or custom headers
+export default useAxiosInterceptor;
