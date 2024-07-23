@@ -8,7 +8,7 @@ body {
   
     font-family: "Open Sans", sans-serif;
     font-size: .940rem;
-    background-color: hsl(200, 100%,97%);
+    background-color: white;
     line-height: normal;
   }
   ul {

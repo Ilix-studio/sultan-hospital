@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 const Container = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto -40px;
   padding: 20px;
 `
 
@@ -15,11 +15,18 @@ const Header = styled.header`
 `
 
 const Logo = styled.div`
+  display: flex;
+  align-items: center;
   h1 {
-    font-size: 1.3rem;
+    
+    font-size: 1.2rem;
     color: #333;
   }
-`
+  img {
+    width: 55px;
+    height: 50px;
+  }
+`;
 
 const LogoutButton = styled.button`
   width: 130px;
@@ -47,7 +54,7 @@ const Main = styled.main`
 
 const CardContainer = styled.div`
   display: flex;
-  gap: 40px;
+  gap: 20px;
   width: 100%;
 
   @media (max-width: 768px) {
@@ -58,8 +65,8 @@ const CardContainer = styled.div`
 
 const Card = styled.div`
   width: 100%;
-  max-width: 400px;
-  height: 152px;
+  max-width: 270px;
+  height: 100px;
   padding: 24px;
   background: #2b3467;
   color: #bad7e9;

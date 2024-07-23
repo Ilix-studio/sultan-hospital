@@ -91,9 +91,9 @@ const refresh = (req, res) => {
 //GET Request - /api/admin/adminDashboard
 //Private
 const adminDasHboard = asyncHandler(async (req, res) => {
-  console.log(res)
-  res.status(200).json({ message: 'Admin Dashboard' })
-})
+  // console.log(res);
+  res.status(200).json({ message: "Admin Dashboard" });
+});
 
 //Logout Admin
 //POST Request - /api/admin/logout
