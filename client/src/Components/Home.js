@@ -6,6 +6,8 @@ import Heading from "./Heading/Heading";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 
+import "./home.css";
+
 const Home = () => {
   return (
     <>

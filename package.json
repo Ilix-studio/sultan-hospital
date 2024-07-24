@@ -9,10 +9,7 @@
     "client": "npm start --prefix client",
     "server": "nodemon server/index.js",
     "seed:admin": "node server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "prepare": "husky install",
-    "lint": "eslint --ignore-path .gitignore '*/**/*.{js,jsx}'",
-    "format": "prettier --ignore-path .gitignore --write '*/**/*.{js,jsx}'"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
