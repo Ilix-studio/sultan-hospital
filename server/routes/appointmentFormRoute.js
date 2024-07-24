@@ -16,5 +16,5 @@ router.get("/view", verifyJWT, viewAppointment);
 router.put("/update/:id", verifyJWT, updateAppointment);
 router.delete("/delete/:id", verifyJWT, deleteAppointment);
 router.get('/view/:id', verifyJWT, getAppointmentById);
-// use id in update and delete route
+
 export default router

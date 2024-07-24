@@ -5,21 +5,6 @@ import Appointment from '../models/appointmentModel.js'
 //GET Request - /api/form/todays-appointments
 //Private
 
-// const viewTodaysAppointments = asyncHandler(async (req, res) => {
-//   const todayStart = new Date().setHours(0, 0, 0, 0); // Start of today
-//   const todayEnd = new Date().setHours(23, 59, 59, 999); // End of today
-
-//   let query = Appointment.find().where("date").gte(todayStart).lte(todayEnd);
-
-//   const todaysAppointments = await query.exec();
-
-//   if (!todaysAppointments || todaysAppointments.length === 0) {
-//     res.status(404).json({ message: "No appointments found for today" });
-//   } else {
-//     res.status(200).json(todaysAppointments);
-//   }
-// });
-
 const viewTodaysAppointments = asyncHandler(async (req, res) => {
   const todayStart = new Date().setHours(0, 0, 0, 0); // Start of today
   const todayEnd = new Date().setHours(23, 59, 59, 999); // End of today
@@ -48,24 +33,6 @@ const viewTodaysAppointments = asyncHandler(async (req, res) => {
 //view all appointment
 //GET Request - /api/form/view
 //Private
-
-// const viewAppointment = asyncHandler(async (req, res) => {
-//   const { date, sortBy = '-date' } = req.query; // Default to sorting by date in descending order
-//   let query = Appointment.find();
-
-//   if (date) {
-//     query = query.where("date").equals(date);
-//   }
-
-//   query = query.sort(sortBy);
-
-//   try {
-//     const allAppointments = await query.exec();
-//     res.status(200).json(allAppointments);
-//   } catch (error) {
-//     res.status(500).json({ message: "Server Error" });
-//   }
-// });
 
 const viewAppointment = asyncHandler(async (req, res) => {
   const { date, sortBy = '-date' } = req.query; // Default to sorting by date in descending order
@@ -151,28 +118,8 @@ const createAppointment = asyncHandler(async (req, res) => {
 })
 
 //update an appointment
-//PUT Request - /api/form/update
+//PUT Request - /api/form/update/:id
 //private
-// const updateAppointment = asyncHandler(async (req, res) => {
-//   const { id } = req.params;
-//   const { patientName, phoneNumber, timeSchedule, date } = req.body;
-//   const appointment = await Appointment.findOneAndUpdate(
-//     { _id: id },
-//     {
-//       patientName,
-//       phoneNumber,
-//       timeSchedule,
-//       date,
-//     },
-//     { new: true }
-//   );
-//   if (appointment) {
-//     res.json(appointment);
-//   } else {
-//     res.status(404);
-//     throw new Error("Appointment not found");
-//   }
-// });
 
 const updateAppointment = asyncHandler(async (req, res) => {
   const { id } = req.params;
@@ -221,9 +168,10 @@ const updateAppointment = asyncHandler(async (req, res) => {
 });
 
 
-// delete appointment
-//DEL Request - /api/form/delete
+//delete appointment
+//DEL Request - /api/form/delete/:id
 //private
+
 const deleteAppointment = asyncHandler(async (req, res) => {
   const { id } = req.params
 
@@ -238,7 +186,9 @@ const deleteAppointment = asyncHandler(async (req, res) => {
   }
 });
 
-
+//view a single appointment 
+//GET Request - /api/form//view/:id
+//Private
 
 const getAppointmentById = asyncHandler(async (req, res) => {
   const { id } = req.params;
@@ -262,6 +212,6 @@ export {
   getAppointmentById
 };
 
-// a user Request for update : its a feature
+
 
 
