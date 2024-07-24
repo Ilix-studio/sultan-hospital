@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 * {
@@ -14,8 +14,11 @@ body {
   ul {
 
     background-color: white;
+}
+ul {
+
     list-style: none;
 }
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles

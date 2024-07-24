@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 const Container = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto -40px;
   padding: 20px;
-`;
+`
 
 const Header = styled.header`
   display: flex;
@@ -12,12 +12,19 @@ const Header = styled.header`
   padding: 12px;
   background: #ffffff;
   border-radius: 24px;
-`;
+`
 
 const Logo = styled.div`
+  display: flex;
+  align-items: center;
   h1 {
-    font-size: 1.3rem;
+    
+    font-size: 1.2rem;
     color: #333;
+  }
+  img {
+    width: 55px;
+    height: 50px;
   }
 `;
 
@@ -31,7 +38,7 @@ const LogoutButton = styled.button`
   font-size: 1.2em;
   font-weight: 350;
   color: black;
-`;
+`
 
 const Main = styled.main`
   .welcome-message {
@@ -43,23 +50,23 @@ const Main = styled.main`
       color: #04529b;
     }
   }
-`;
+`
 
 const CardContainer = styled.div`
   display: flex;
-  gap: 40px;
+  gap: 20px;
   width: 100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
   }
-`;
+`
 
 const Card = styled.div`
   width: 100%;
-  max-width: 400px;
-  height: 152px;
+  max-width: 270px;
+  height: 100px;
   padding: 24px;
   background: #2b3467;
   color: #bad7e9;
@@ -71,13 +78,13 @@ const Card = styled.div`
   justify-content: center;
   position: relative;
   box-shadow: 2px solid #bad7e9;
-`;
+`
 
 const CardContent = styled.div`
   display: flex;
   align-items: center;
   gap: 14px;
-`;
+`
 
 const Count = styled.div`
   font-size: 32px;
@@ -85,7 +92,7 @@ const Count = styled.div`
   line-height: 40px;
   letter-spacing: 0.15px;
   word-wrap: break-word;
-`;
+`
 
 const Description = styled.div`
   font-size: 16px;
@@ -98,27 +105,27 @@ const Description = styled.div`
   .bold {
     font-weight: 700;
   }
-`;
+`
 
 const TableContainer = styled.div`
   padding-top: 20px;
-`;
+`
 
 const Table = styled.table`
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   border-collapse: collapse;
   width: 100%;
-`;
+`
 const Td = styled.td`
   border: 1px solid #da1212;
   text-align: left;
   padding: 8px;
-`;
+`
 const Th = styled.th`
   border: 1px solid #da1212;
   text-align: left;
   padding: 8px;
-`;
+`
 
 export {
   Container,
@@ -135,4 +142,4 @@ export {
   Table,
   Th,
   Td,
-};
+}

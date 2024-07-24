@@ -1,9 +1,9 @@
 import React from "react";
-import "./Box1.css";
+import "./Health-services.css";
 
 const Box1 = () => {
-  const features = [
-    "24/7 EMERGENCY MEDICAL SERVICE",
+  const departments = [
+    "24/7 EMERGENCY MEDICAL SURVICE",
     "AFFORDABLE TREATMENT AND TEST",
     "SPECIAL OFFER ON FULL BODY CHECKUP",
     "QUALITY PROFESSIONAL HIGHER ONLY",
@@ -18,7 +18,7 @@ const Box1 = () => {
           <div className="title-row1">
             <h1 className="title1">WHY SULTAN HOSPITAL ?</h1>
           </div>
-          {features.map((feature, index) => (
+          {departments.map((feature, index) => (
             <>
               <div className="feature-row1" key={index}>
                 <div className="feature-name1">{feature}</div>

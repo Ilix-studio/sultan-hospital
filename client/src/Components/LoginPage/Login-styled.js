@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const Container = styled.div`
   display: flex;
@@ -6,7 +6,7 @@ const Container = styled.div`
   align-items: center;
   height: 100vh;
   background-color: #f5f5f5;
-`;
+`
 
 const FormWrapper = styled.div`
   background: white;
@@ -23,13 +23,13 @@ const FormWrapper = styled.div`
   @media (max-width: 480px) {
     padding: 1rem;
   }
-`;
+`
 
 const Title = styled.h2`
   margin-bottom: 1.5rem;
   text-align: center;
   color: #333;
-`;
+`
 
 const Input = styled.input`
   width: 100%;
@@ -43,7 +43,7 @@ const Input = styled.input`
     border-color: #007bff;
     outline: none;
   }
-`;
+`
 
 const Button = styled.button`
   width: 100%;
@@ -59,6 +59,6 @@ const Button = styled.button`
   &:hover {
     background-color: #0056b3;
   }
-`;
+`
 
-export { Button, Input, Title, FormWrapper, Container };
+export { Button, Input, Title, FormWrapper, Container }
