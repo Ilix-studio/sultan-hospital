@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Box3.css";
+import "./Bottom-container.css";
 import { Link } from "react-router-dom";
 
 function PhotoCard({ images }) {
@@ -42,7 +42,7 @@ function Box3() {
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/21098689864171c92013e26d463a0dd090affb6b1b9ac5c7913a5b637417709a?apiKey=be905fcf35c049c9b7bd0705582b940a&"
-          alt="Featured image"
+          alt="Featured img"
           className="featured-image"
         />
       </Link>
