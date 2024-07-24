@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const appointmentSchema = mongoose.Schema(
   {
@@ -6,32 +6,20 @@ const appointmentSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    guardianName: {
-      type: String,
-    },
     phoneNumber: {
       type: String,
       required: true,
     },
-    address: {
-      type: String,
-      required: true,
-    },
-    doctor: {
-      type: String,
-      ref: "Doctor",
-      required: true,
-    },
-    time: {
-      type: String,
-      required: true,
-    },
     date: {
+      type: Date,
+      required: true,
+    },
+    timeSchedule: {
       type: String,
       required: true,
     },
   },
-  { timestamps: true }
-);
-const Appointment = mongoose.model("Appointment", appointmentSchema);
-export default Appointment;
+  { timestamps: true },
+)
+const Appointment = mongoose.model('Appointment', appointmentSchema)
+export default Appointment

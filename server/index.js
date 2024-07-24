@@ -1,31 +1,33 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import appointmentFormRoute from "./routes/appointmentFormRoute.js";
-import loginRoutes from "./routes/loginRoute.js";
-import { errorHandler, routeNotFound } from "./middleware/errorMiddleware.js";
-import connectDB from "./mongoDb/connection.js";
-import cookieParser from "cookie-parser";
+import express from 'express'
+import cors from 'cors'
+import dotenv from 'dotenv'
+import appointmentFormRoute from './routes/appointmentFormRoute.js'
+import loginRoutes from './routes/loginRoute.js'
+import { errorHandler, routeNotFound } from './middleware/errorMiddleware.js'
+import connectDB from './mongoDb/connection.js'
+import cookieParser from 'cookie-parser'
+import corsOptions from './config/corsOptions.js'
+
 // import seedAdmin from "./AdminPrivilege/seeder.js";
-const port = 5000;
+const port = 5000
 
-dotenv.config();
+dotenv.config()
 
-const app = express();
+const app = express()
 //use middleware
-app.use(express.json({ limit: "30mb" }));
-app.use(express.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
-app.use(cookieParser());
+app.use(express.json({ limit: '30mb' }))
+app.use(express.urlencoded({ limit: '30mb', extended: true }))
+app.use(cors(corsOptions))
+app.use(cookieParser())
 
-app.use("/api/form", appointmentFormRoute);
-app.use("/api/admin", loginRoutes);
-app.use(routeNotFound);
-app.use(errorHandler);
+app.use('/api/form', appointmentFormRoute)
+app.use('/api/admin', loginRoutes)
+app.use(routeNotFound)
+app.use(errorHandler)
 
-connectDB();
+connectDB()
 // seedAdmin();
 
-app.get("/", (req, res) => res.send("server is ready"));
+app.get('/', (req, res) => res.send('server is ready'))
 
-app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
+app.listen(port, () => console.log(`Listening at http://localhost:${port}`))
