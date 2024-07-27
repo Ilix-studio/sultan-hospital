@@ -1,46 +1,50 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import './Departments.css'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Departments.css";
 
 const Box2 = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const departments = [
-    'NEUROLOGY',
-    'CARDIOLOGY',
-    'UROLOGY',
-    'ORTHOPEDICS',
-    'GYNECOLOGY',
-    'MEDICINE',
-    'PATHOLOGY',
-    'PEDIATRICS',
-    'ENDOCRINOLOGY',
-    'ANESTHESIOLOGY',
-    'SURGERY',
-    'PHYSIOTHERAPY',
-  ]
+    "NEUROLOGY",
+    "CARDIOLOGY",
+    "UROLOGY",
+    "ORTHOPEDICS",
+    "GYNECOLOGY",
+    "MEDICINE",
+    "PATHOLOGY",
+    "PEDIATRICS",
+    "ENDOCRINOLOGY",
+    "ANESTHESIOLOGY",
+    "SURGERY",
+    "PHYSIOTHERAPY",
+  ];
 
   const handleDepartmentClick = (department) => {
-    navigate(`/doctors/${department}`)
-  }
+    navigate(`/doctors/${department}`);
+  };
 
   return (
-    <div className="container">
-      <div className="title-row">
-        <h1 className="title">DEPARTMENTS</h1>
-      </div>
-      {departments.map((department, index) => (
-        <div
-          className="department-row"
-          key={index}
-          onClick={() => handleDepartmentClick(department)}
-        >
-          <div className="department-background" />
-          <div className="department-name">{department}</div>
-        </div>
-      ))}
-    </div>
-  )
-}
+    <div className="why-choose-us">
+      <div class="why-choose-us-left">
+        <h3>Departments</h3>
 
-export default Box2
+        <div class="why-choose-box-container">
+          {departments.map((department, index) => (
+            <div
+              class="why-choose-box"
+              key={index}
+              onClick={() => handleDepartmentClick(department)}
+            >
+              <div class="why-choose-box-text">
+                <strong>{department}</strong>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Box2;
