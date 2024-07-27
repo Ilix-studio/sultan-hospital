@@ -21,6 +21,7 @@
   .about-us-description p {
     font-size: 1rem;
     line-height: 1.5;
+    text-align: justify;
   }
   
   .about-us-awards {
