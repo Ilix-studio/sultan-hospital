@@ -46,8 +46,8 @@
 
 .quicklink-logo {
   width: 25vw;
-  height: 50px;
-  background-image: url("../../assets/shlogo-white.png");
+  height: auto;
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
