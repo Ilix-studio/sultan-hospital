@@ -1,0 +1,61 @@
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .service-item {
+    display: flex;
+    flex-direction: column; /* Default to column to stack heading, image, and description */
+    margin-bottom: 20px;
+  }
+  
+  .service-description h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: underline; /* Center the heading for both PC and mobile */
+  }
+  
+  .service-image img {
+    width: 100%;
+    max-width: 600px; /* Resize the image */
+    height: auto;
+    margin-bottom: 20px; /* Add space below image */
+  }
+  
+  .service-description p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design for PC */
+  @media (min-width: 769px) {
+    .service-item {
+      flex-direction: row; 
+    }
+  
+    .service-image {
+      flex: 0 0 200px; 
+      margin-right: 20px; 
+    }
+  
+    .service-description {
+      flex: 1; 
+      margin-left: 20px; 
+    }
+  
+    .service-description h2 {
+      order: -1; 
+      margin-bottom: 5px;
+      text-align: center;
+    }
+  
+    .service-description p {
+      text-align: justify;
+      margin-top: 0;
+    }
+  }
+  

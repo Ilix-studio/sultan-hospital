@@ -6,6 +6,7 @@ import LoginPage from "./Components/LoginPage/LoginPage";
 import GlobalStyles from "./Components/Styles/GLobal";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
+import Services from "./Components/Services";
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/adminDashboard" element={<AdminDashboard />}/>
         <Route path="/create" element={<CreateAppointment />}/>
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/services" element={<Services />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
