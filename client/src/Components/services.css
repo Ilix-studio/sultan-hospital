@@ -6,7 +6,7 @@
   
   .service-item {
     display: flex;
-    flex-direction: column; /* Default to column to stack heading, image, and description */
+    flex-direction: column; 
     margin-bottom: 20px;
   }
   
@@ -14,14 +14,16 @@
     font-size: 1.5rem;
     margin-bottom: 10px;
     text-align: center;
-    text-decoration: underline; /* Center the heading for both PC and mobile */
+    text-decoration: underline; 
   }
   
   .service-image img {
     width: 100%;
-    max-width: 600px; /* Resize the image */
+    max-width: 600px; 
     height: auto;
-    margin-bottom: 20px; /* Add space below image */
+    margin-bottom: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25),  0 6px 6px rgba(0, 0, 0, 0.22); 
   }
   
   .service-description p {
@@ -31,7 +33,7 @@
     margin-bottom: 20px;
   }
   
-  /* Responsive Design for PC */
+  
   @media (min-width: 769px) {
     .service-item {
       flex-direction: row; 
