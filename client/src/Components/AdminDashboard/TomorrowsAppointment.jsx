@@ -6,12 +6,12 @@ import Delete from "./Delete";
 import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
 import { Toaster } from "react-hot-toast";
 
-const TotalAppointments = () => {
+const TomorrowsAppointment = () => {
   const { axiosPrivate } = useAxiosInterceptor();
 
   const fetchAppointments = async () => {
     const { data } = await axiosPrivate.get(
-      "http://localhost:5000/api/form/view"
+      "http://localhost:5000/api/form/tomorrows-appointments"
     );
     return data;
   };
@@ -38,7 +38,7 @@ const TotalAppointments = () => {
     <Container>
       <Toaster />
       <TableContainer>
-        <h2>ALL APPOINTMENTS</h2>
+        <h2>TOMORROW'S APPOINTMENTS</h2>
         <Table>
           <thead>
             <tr>
@@ -60,7 +60,7 @@ const TotalAppointments = () => {
                 <Td>{formatDate(appointment.date)}</Td>
                 <Td>
                 <Update appointmentId={appointment._id} refetch={refetch} />
-                  <Delete appointmentId={appointment._id} refetch={refetch} />
+                <Delete appointmentId={appointment._id} refetch={refetch} />
                 </Td>
               </tr>
             ))}
@@ -71,4 +71,6 @@ const TotalAppointments = () => {
   );
 };
 
-export default TotalAppointments;
+export default TomorrowsAppointment;
+
+

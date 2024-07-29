@@ -116,3 +116,32 @@ export const ErrorMessageStyled = styled.div`
   margin-top: 5px;
   margin-bottom: 10px; // Add some space below the error message
 `;
+
+export const BackButtonStyled = styled.button`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: #2c3e50;
+  border: 1px solid #2c3e50;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: #2c3e50;
+    color: white;
+    box-shadow: 1px 3px 5px #34495e;
+    border: 1px solid #2c3e50;
+  }
+
+  @media (max-width: 480px) {
+    top: 10px;
+    left: 10px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+`;
+

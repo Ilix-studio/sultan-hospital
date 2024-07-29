@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+     import React, { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate, Outlet } from 'react-router-dom';
 import { Container, Header, Logo, LogoutButton, Main, CardContainer, Card, CardContent, Count, Description } from './Dashboard-styled';
 import useAxiosInterceptor from '../../hooks/useAxiosInterceptor';
 import TotalAppointments from './TotalAppointments';
 import ViewTodaysAppointment from './ViewTodaysAppointment';
+import TomorrowsAppointment from './TomorrowsAppointment';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 
@@ -30,7 +31,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
   const { axiosPrivate } = useAxiosInterceptor();
   const [view, setView] = useState('total');
-  const { setAuth} = useAuth();
+  const { setAuth } = useAuth();
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -62,10 +63,6 @@ const AdminDashboard = () => {
   const todaysAppointmentsCount = (todaysAppointments && todaysAppointments.length) || 0;
   const totalAppointmentsCount = (totalAppointments && totalAppointments.length) || 0;
 
-  const toggleView = () => {
-    setView((prevView) => (prevView === 'total' ? 'todays' : 'total'));
-  };
-
   const handleLogout = async () => {
     try {
       await axios.post('http://localhost:5000/api/admin/logout', {}, { withCredentials: true });
@@ -82,7 +79,7 @@ const AdminDashboard = () => {
       <Container>
         <Header>
           <Logo>
-            <img src="https://i.ibb.co/pPRBdMz/shrc-logo-new.png" alt="Sultan Hospital Logo"/>
+            <img src="https://i.ibb.co/pPRBdMz/shrc-logo-new.png" alt="Sultan Hospital Logo" />
             <h1>Sultan Hospital</h1>
           </Logo>
           <LogoutButton onClick={handleLogout}>Log out</LogoutButton>
@@ -93,21 +90,21 @@ const AdminDashboard = () => {
           </div>
         </Main>
         <CardContainer>
-          <Card>
+          <Card onClick={() => setView('todays')}>
             <CardContent>
               <Count>{todaysAppointmentsCount}</Count>
             </CardContent>
-            <Description>{"Appointments Today"}</Description>
+            <Description>Appointments Today</Description>
           </Card>
-          <Card onClick={toggleView}>
+          <Card onClick={() => setView('tomorrows')}>
             <CardContent>
               <Count>View</Count>
             </CardContent>
-            <Description>{view === 'todays' ? "Total Appointments" : "Today's Appointments"}</Description>
+            <Description>Tomorrow's Appointments</Description>
           </Card>
-          <Card>
-           <CardContent>
-           <Count>{totalAppointmentsCount}</Count>
+          <Card onClick={() => setView('total')}>
+            <CardContent>
+              <Count>{totalAppointmentsCount}</Count>
             </CardContent>
             <Description>Total Appointments</Description>
           </Card>
@@ -121,10 +118,10 @@ const AdminDashboard = () => {
       </Container>
       {view === 'total' && <TotalAppointments />}
       {view === 'todays' && <ViewTodaysAppointment />}
+      {view === 'tomorrows' && <TomorrowsAppointment />}
       <Outlet />
     </>
-  )
+  );
 }
 
 export default AdminDashboard;
-     

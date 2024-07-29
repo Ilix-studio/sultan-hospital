@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken'
 //Login Admin
 //POST Request - /api/admin/login
 //Generate token and store cookie based
+
 const loginAdmin = asyncHandler(async (req, res) => {
   const { email, password } = req.body
   if (!email || !password) {
@@ -51,6 +52,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
 
 //Token Refresh - to login admin to extended period
 //GET Request - /api/admin/refresh
+
 const refresh = (req, res) => {
   const cookies = req.cookies
   console.log(cookies)
@@ -90,6 +92,7 @@ const refresh = (req, res) => {
 
 //GET Request - /api/admin/adminDashboard
 //Private
+
 const adminDasHboard = asyncHandler(async (req, res) => {
   // console.log(res);
   res.status(200).json({ message: "Admin Dashboard" });
@@ -98,6 +101,7 @@ const adminDasHboard = asyncHandler(async (req, res) => {
 //Logout Admin
 //POST Request - /api/admin/logout
 //destroy cookie
+
 const logout = (req, res) => {
   const cookieJar = req.cookies
   if (!cookieJar?.jwt) {
