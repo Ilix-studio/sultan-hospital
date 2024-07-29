@@ -1,141 +1,8 @@
-// // import React from "react";
-
-// // const Update = () => {
-// //   return <div>Edit</div>;
-// // };
-
-// // export default Update;
-
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-// import { useMutation, useQueryClient } from "react-query";
-// import toast from "react-hot-toast";
-// import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
-
-// const Update = ({ appointmentId, refetch }) => {
-//   const { axiosPrivate } = useAxiosInterceptor();
-//   const queryClient = useQueryClient();
-//   const [formValues, setFormValues] = useState({
-//     patientName: "",
-//     phoneNumber: "",
-//     timeSchedule: "",
-//     date: "",
-//   });
-//   const [showForm, setShowForm] = useState(false);
-
-//   // Fetch appointment details when component mounts
-//   useEffect(() => {
-//     const fetchAppointment = async () => {
-//       try {
-//         const { data } = await axiosPrivate.get(`http://localhost:5000/api/form/view/${appointmentId}`);
-//         setFormValues({
-//           patientName: data.patientName,
-//           phoneNumber: data.phoneNumber,
-//           timeSchedule: data.timeSchedule,
-//           date: new Date(data.date).toISOString().split('T')[0],
-//         });
-//       } catch (error) {
-//         toast.error(`Error fetching appointment: ${error.response?.data?.message || error.message}`);
-//       }
-//     };
-    
-//     if (appointmentId) {
-//       fetchAppointment();
-//     }
-//   }, [appointmentId, axiosPrivate]);
-
-//   const updateMutation = useMutation(
-//     async () => {
-//       await axiosPrivate.put(`http://localhost:5000/api/form/update/${appointmentId}`, formValues);
-//     },
-//     {
-//       onSuccess: () => {
-//         toast.success("Appointment updated successfully", {
-//           duration: 2000,
-//           style: {
-//             fontSize: '18px',
-//             minWidth: '350px'
-//           }
-//         });
-//         queryClient.invalidateQueries("totalAppointments");
-//         refetch();
-//         setShowForm(false); // Hide the form after successful update
-//       },
-//       onError: (error) => {
-//         toast.error(`Error: ${error.response?.data?.message || error.message}`, {
-//           duration: 2000,
-//           style: {
-//             fontSize: '18px',
-//             minWidth: '350px'
-//           }
-//         });
-//       }
-//     }
-//   );
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     updateMutation.mutate();
-//   };
-
-//   return (
-//     <div>
-//       <button onClick={() => setShowForm(true)}>Edit</button>
-//       {showForm && (
-//         <div>
-//           <form onSubmit={handleSubmit}>
-//             <label htmlFor="patientName">Patient Name:</label>
-//             <input
-//               type="text"
-//               id="patientName"
-//               name="patientName"
-//               value={formValues.patientName}
-//               onChange={handleChange}
-//             />
-//             <label htmlFor="phoneNumber">Phone Number:</label>
-//             <input
-//               type="text"
-//               id="phoneNumber"
-//               name="phoneNumber"
-//               value={formValues.phoneNumber}
-//               onChange={handleChange}
-//             />
-//             <label htmlFor="timeSchedule">Time Schedule:</label>
-//             <input
-//               type="text"
-//               id="timeSchedule"
-//               name="timeSchedule"
-//               value={formValues.timeSchedule}
-//               onChange={handleChange}
-//             />
-//             <label htmlFor="date">Date:</label>
-//             <input
-//               type="date"
-//               id="date"
-//               name="date"
-//               value={formValues.date}
-//               onChange={handleChange}
-//             />
-//             <button type="submit">Update</button>
-//             <button type="button" onClick={() => setShowForm(false)}>Cancel</button>
-//           </form>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Update;
-
 import React, { useState, useEffect } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import toast from "react-hot-toast";
 import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
+import { EditDeleteButton} from './Dashboard-styled';
 
 const timeOptions = [
   { value: "10:00-11:00", label: "10:00 - 11:00" },
@@ -219,7 +86,7 @@ const Update = ({ appointmentId, refetch }) => {
 
   return (
     <div>
-      <button onClick={() => setShowForm(true)}>Edit</button>
+      <EditDeleteButton onClick={() => setShowForm(true)}>Edit</EditDeleteButton>
       {showForm && (
         <div>
           <form onSubmit={handleSubmit}>
@@ -263,8 +130,8 @@ const Update = ({ appointmentId, refetch }) => {
               value={formValues.date}
               onChange={handleChange}
             />
-            <button type="submit">Update</button>
-            <button type="button" onClick={() => setShowForm(false)}>Cancel</button>
+            <EditDeleteButton type="submit">Update</EditDeleteButton>
+            <EditDeleteButton type="button" onClick={() => setShowForm(false)}>Cancel</EditDeleteButton>
           </form>
         </div>
       )}
