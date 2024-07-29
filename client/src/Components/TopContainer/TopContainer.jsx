@@ -36,7 +36,7 @@ const Facilities = () => (
   </div>
 );
 
-function Box() {
+const Box = () => {
   return (
     <div className="parent">
       <VideoSection />
