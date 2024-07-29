@@ -28,6 +28,38 @@ const viewTodaysAppointments = asyncHandler(async (req, res) => {
   }
 });
 
+// View tomorrow's appointments
+// GET Request - /api/form/tomorrows-appointments
+// Private
+
+const viewTomorrowsAppointments = asyncHandler(async (req, res) => {
+  const today = new Date();
+  const tomorrowStart = new Date(today);
+  tomorrowStart.setDate(today.getDate() + 1);
+  tomorrowStart.setHours(0, 0, 0, 0); // Start of tomorrow
+
+  const tomorrowEnd = new Date(today);
+  tomorrowEnd.setDate(today.getDate() + 1);
+  tomorrowEnd.setHours(23, 59, 59, 999); // End of tomorrow
+
+  try {
+    let query = Appointment.find().where("date").gte(tomorrowStart).lte(tomorrowEnd);
+    const tomorrowsAppointments = await query.exec();
+
+    if (tomorrowsAppointments.length === 0) {
+      // Return an empty array if no appointments are found
+      return res.status(200).json([]);
+    }
+
+    // Return the list of tomorrow's appointments if found
+    res.status(200).json(tomorrowsAppointments);
+
+  } catch (error) {
+    // Handle any errors that occur during data fetching
+    console.error("Error fetching tomorrow's appointments:", error);
+    res.status(500).json({ message: "Error fetching appointments" });
+  }
+});
 
 
 //view all appointment
@@ -205,6 +237,7 @@ const getAppointmentById = asyncHandler(async (req, res) => {
 
 export {
   viewTodaysAppointments,
+  viewTomorrowsAppointments,
   createAppointment,
   viewAppointment,
   updateAppointment,

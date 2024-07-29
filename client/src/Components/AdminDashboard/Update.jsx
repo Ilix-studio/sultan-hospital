@@ -136,6 +136,7 @@ import React, { useState, useEffect } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import toast from "react-hot-toast";
 import useAxiosInterceptor from "../../hooks/useAxiosInterceptor";
+import { EditDeleteButton} from './Dashboard-styled';
 
 const timeOptions = [
   { value: "10:00-11:00", label: "10:00 - 11:00" },
@@ -219,7 +220,7 @@ const Update = ({ appointmentId, refetch }) => {
 
   return (
     <div>
-      <button onClick={() => setShowForm(true)}>Edit</button>
+      <EditDeleteButton onClick={() => setShowForm(true)}>Edit</EditDeleteButton>
       {showForm && (
         <div>
           <form onSubmit={handleSubmit}>
@@ -263,8 +264,8 @@ const Update = ({ appointmentId, refetch }) => {
               value={formValues.date}
               onChange={handleChange}
             />
-            <button type="submit">Update</button>
-            <button type="button" onClick={() => setShowForm(false)}>Cancel</button>
+            <EditDeleteButton type="submit">Update</EditDeleteButton>
+            <EditDeleteButton type="button" onClick={() => setShowForm(false)}>Cancel</EditDeleteButton>
           </form>
         </div>
       )}

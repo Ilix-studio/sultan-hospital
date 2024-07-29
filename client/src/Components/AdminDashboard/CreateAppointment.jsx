@@ -12,6 +12,7 @@ import {
   OptionStyled,
   CustomDatePicker,
   ErrorMessageStyled,
+  BackButtonStyled,
 } from "./style";
 import { useNavigate } from "react-router-dom";
 
@@ -43,12 +44,12 @@ const InputGroup = ({ icon, label, type, id, options, isDate, value, onChange, r
     }
     setIsPhoneValid(newValue.length === 10 && /^[9876]/.test(newValue));
     onChange(id, newValue);
-    setIsTouched(true); // Set the touched flag to true when the input is changed
+    setIsTouched(true); 
   };
 
   const handleInputChange = (event) => {
     onChange(id, event.target.value);
-    if (type === "tel") setIsTouched(true); // Set the touched flag to true when the input is changed
+    if (type === "tel") setIsTouched(true); 
   };
 
   return (
@@ -164,23 +165,23 @@ const CreateAppointment = () => {
     {
       onSuccess: () => {
         toast.success("Appointment created successfully!", {
-          duration: 1000, // Set duration to 5000ms (5 seconds)
+          duration: 1000, 
           style: {
-            fontSize: '18px', // Increase font size
-            minWidth: '350px' // Set minimum width
+            fontSize: '18px', 
+            minWidth: '350px' 
           }
         });
-        setFormValues(initialFormValues); // Reset form values on success
-        setReset(true); // Trigger reset for the InputGroup components
-        setTimeout(() => setReset(false), 0); // Reset the reset flag to false
+        setFormValues(initialFormValues); 
+        setReset(true); 
+        setTimeout(() => setReset(false), 0); 
         setTimeout(() => navigate('/adminDashboard'), 3000);
       },
       onError: (error) => {
         toast.error(`Failed to create appointment: ${error.response?.data?.message || error.message}`, {
-          duration: 3000, // Set duration to 5000ms (5 seconds)
+          duration: 3000, 
           style: {
-            fontSize: '18px', // Increase font size
-            minWidth: '350px' // Set minimum width
+            fontSize: '18px', 
+            minWidth: '350px' 
           }
         });
       },
@@ -192,10 +193,10 @@ const CreateAppointment = () => {
     const { phoneNumber } = formValues;
     if (phoneNumber.length !== 10 || !/^[9876]/.test(phoneNumber)) {
       toast.error("Please enter a valid 10 digit phone number starting with 9, 8, 7, or 6", {
-        duration: 3000, // Set duration to 5000ms (5 seconds)
+        duration: 3000, 
         style: {
-          fontSize: '18px', // Increase font size
-          minWidth: '350px' // Set minimum width
+          fontSize: '18px', 
+          minWidth: '350px' 
         }
       });
       return;
@@ -203,7 +204,7 @@ const CreateAppointment = () => {
     const appointmentData = {
       patientName: formValues.fullName,
       phoneNumber: formValues.phoneNumber,
-      date: formValues.appointmentDate.toISOString(), // Ensure date is in ISO string format
+      date: formValues.appointmentDate.toISOString(), 
       timeSchedule: formValues.appointmentTime,
     };
     mutation.mutate(appointmentData);
@@ -212,6 +213,9 @@ const CreateAppointment = () => {
   return (
     <>
       <Toaster />
+      <BackButtonStyled onClick={() => navigate('/adminDashboard')}>
+         Back to Dashboard
+      </BackButtonStyled>
       <AppointmentFormStyled onSubmit={handleSubmit}>
         {inputData.map((input, index) => (
           <InputGroup key={index} {...input} value={formValues[input.id]} onChange={handleInputChange} reset={reset} />
