@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 
 import { Link } from "react-router-dom";
+import SHlogo from "./../../../src/assets/shlogo-white.png";
 
 const Footer = () => {
   const quicklinks = ["Home", "About Us", "Services", "Contact Us"];
@@ -10,8 +11,7 @@ const Footer = () => {
       <div className="footer">
         <div className="footer-top">
           <div className="footer-left">
-            <h2 className="quicklink-logo">fgg</h2>
-            <div className="facebook">Follow us on Facebook</div>
+            <img src={SHlogo} alt="" className="quicklink-logo" />
 
             <h4 className="quick-links">Quick Links</h4>
             {quicklinks.map((link, index) => {
