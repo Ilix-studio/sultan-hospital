@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import {
   Header,
   Nav,
@@ -7,22 +7,20 @@ import {
   NavLogo,
   NavMenu,
   NavToggle,
-} from './Navbar-Style.js'
-import { RiCloseLine, RiMenuLine } from 'react-icons/ri'
-import { MdOutlineHealthAndSafety } from 'react-icons/md'
+} from "./Navbar-Style.js";
+import { RiCloseLine, RiMenuLine } from "react-icons/ri";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   return (
     <Header>
       <Nav>
         <NavData>
           <NavLogo to="/">Sultan Hospital</NavLogo>
-          <MdOutlineHealthAndSafety size={24} />
         </NavData>
         <NavToggle onClick={toggleMenu}>
           {isOpen ? <RiCloseLine size={24} /> : <RiMenuLine size={24} />}
@@ -36,7 +34,7 @@ const Navbar = () => {
         </NavMenu>
       </Nav>
     </Header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
