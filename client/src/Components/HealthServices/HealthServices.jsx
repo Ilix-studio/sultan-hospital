@@ -1,34 +1,38 @@
 import React from "react";
-import "./Health-services.css";
+import { useNavigate } from "react-router-dom";
 
 const Box1 = () => {
-  const departments = [
+  const navigate = useNavigate();
+  const healthServices = [
     "24/7 EMERGENCY MEDICAL SURVICE",
     "AFFORDABLE TREATMENT AND TEST",
     "SPECIAL OFFER ON FULL BODY CHECKUP",
     "QUALITY PROFESSIONAL HIGHER ONLY",
     "QUALIFIED EXPERTS IN THERIR FIELD",
   ];
-
+  const handleDepartmentClick = (department) => {
+    navigate(`/doctors/${department}`);
+  };
   return (
-    <>
-      <div className="main">
-        <div className="container-bg"></div>
-        <div className="container1">
-          <div className="title-row1">
-            <h1 className="title1">WHY SULTAN HOSPITAL ?</h1>
-          </div>
-          {departments.map((feature, index) => (
-            <>
-              <div className="feature-row1" key={index}>
-                <div className="feature-name1">{feature}</div>
-                <div className="feature-background1"></div>
+    <div className="why-choose-us">
+      <div className="why-choose-us-left">
+        <h3>Why Sultan Hospital </h3>
+
+        <div className="why-choose-box-container">
+          {healthServices.map((department, index) => (
+            <div
+              className="why-choose-box"
+              key={index}
+              onClick={() => handleDepartmentClick(department)}
+            >
+              <div className="why-choose-box-text">
+                <strong>{department}</strong>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

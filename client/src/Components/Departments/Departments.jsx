@@ -26,17 +26,17 @@ const Box2 = () => {
 
   return (
     <div className="why-choose-us">
-      <div class="why-choose-us-left">
+      <div className="why-choose-us-left">
         <h3>Departments</h3>
 
-        <div class="why-choose-box-container">
+        <div className="why-choose-box-container">
           {departments.map((department, index) => (
             <div
-              class="why-choose-box"
+              className="why-choose-box"
               key={index}
               onClick={() => handleDepartmentClick(department)}
             >
-              <div class="why-choose-box-text">
+              <div className="why-choose-box-text">
                 <strong>{department}</strong>
               </div>
             </div>

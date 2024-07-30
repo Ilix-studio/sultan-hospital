@@ -1,23 +1,25 @@
 import HealthServices from "./HealthServices/HealthServices";
 import Departments from "./Departments/Departments";
 import TopContainer from "./TopContainer/TopContainer";
-import BottomContainer from "./BottomContainer/BottomContainer";
+
 import Heading from "./Heading/Heading";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 
 import "./home.css";
+import Counter from "./Counter/Counter";
+import Logobar from "./LogoBar/Logobar";
 
 const Home = () => {
   return (
     <>
+      <Logobar />
       <Navbar />
       <Heading />
-
       <TopContainer />
       <HealthServices />
       <Departments />
-      <BottomContainer />
+      <Counter />
       <Footer />
     </>
   );
