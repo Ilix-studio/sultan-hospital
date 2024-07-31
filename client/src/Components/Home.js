@@ -8,12 +8,10 @@ import Footer from "./Footer/Footer";
 
 import "./home.css";
 import Counter from "./Counter/Counter";
-import Logobar from "./LogoBar/Logobar";
 
 const Home = () => {
   return (
     <>
-      <Logobar />
       <Navbar />
       <Heading />
       <TopContainer />

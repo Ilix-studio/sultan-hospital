@@ -1,8 +1,4 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-
-const Box1 = () => {
-  const navigate = useNavigate();
+const HealthServices = () => {
   const healthServices = [
     "24/7 EMERGENCY MEDICAL SURVICE",
     "AFFORDABLE TREATMENT AND TEST",
@@ -10,9 +6,7 @@ const Box1 = () => {
     "QUALITY PROFESSIONAL HIGHER ONLY",
     "QUALIFIED EXPERTS IN THERIR FIELD",
   ];
-  const handleDepartmentClick = (department) => {
-    navigate(`/doctors/${department}`);
-  };
+
   return (
     <div className="why-choose-us">
       <div className="why-choose-us-left">
@@ -20,11 +14,7 @@ const Box1 = () => {
 
         <div className="why-choose-box-container">
           {healthServices.map((department, index) => (
-            <div
-              className="why-choose-box"
-              key={index}
-              onClick={() => handleDepartmentClick(department)}
-            >
+            <div className="why-choose-box" key={index}>
               <div className="why-choose-box-text">
                 <strong>{department}</strong>
               </div>
@@ -36,4 +26,4 @@ const Box1 = () => {
   );
 };
 
-export default Box1;
+export default HealthServices;
