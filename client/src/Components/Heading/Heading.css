@@ -177,7 +177,7 @@
     box-shadow: 0 0 0 45px rgba(85, 85, 85, 0.116);
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 767px) {
   .about-inner-content-left {
     padding-top: 30px;
   }
