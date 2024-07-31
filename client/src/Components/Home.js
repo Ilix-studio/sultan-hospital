@@ -8,16 +8,18 @@ import Footer from "./Footer/Footer";
 
 import "./home.css";
 import Counter from "./Counter/Counter";
+import ServiceCard from "./3DServiceCard/ServiceCard";
 
 const Home = () => {
   return (
     <>
       <Navbar />
       <Heading />
+      <Counter />
+      <ServiceCard />
       <TopContainer />
       <HealthServices />
       <Departments />
-      <Counter />
       <Footer />
     </>
   );

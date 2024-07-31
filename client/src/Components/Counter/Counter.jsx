@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Counter.css";
 
-function CountNumber({ target, speed = 20 }) {
+function CountNumber({ target, speed }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -36,21 +36,21 @@ const Counter = () => {
       <div className="counter-container">
         <div className="counter">
           <h4 className="count">
-            <CountNumber target={1254} speed={30} />
+            <CountNumber target={80} speed={50} />
           </h4>
-          <p>New Visitors Every Week</p>
+          <p>80+ Hospital Beds</p>
         </div>
         <div className="counter">
           <h4 className="count">
-            <CountNumber target={1254} speed={30} />
+            <CountNumber target={700} speed={100} />
           </h4>
-          <p>New Visitors Every Week</p>
+          <p>Free Treatments</p>
         </div>
         <div className="counter">
           <h4 className="count">
-            <CountNumber target={1254} speed={30} />
+            <CountNumber target={500000} speed={1000} />
           </h4>
-          <p>New Visitors Every Week</p>
+          <p>Happy Patients</p>
         </div>
       </div>
     </>
