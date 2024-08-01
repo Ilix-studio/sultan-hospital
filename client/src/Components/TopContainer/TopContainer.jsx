@@ -1,4 +1,3 @@
-import React from "react";
 import "./TopContainer.css";
 
 const AmbulanceService = () => (
@@ -23,7 +22,7 @@ const Facilities = () => (
   </div>
 );
 
-const Box = () => {
+const TopContainer = () => {
   return (
     <div className="parent">
       <AmbulanceService />
@@ -32,4 +31,4 @@ const Box = () => {
   );
 };
 
-export default Box;
+export default TopContainer;

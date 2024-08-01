@@ -19,10 +19,10 @@ const Heading = () => {
             <p>
               Welcome to Sultan Multi-Speciality Hospital and Research Center.{" "}
             </p>
-            <h1>
+            <h2>
               Leading <span style={textStyle}> HealthCare</span> Excellence in
               <br /> Morigaon
-            </h1>
+            </h2>
           </div>
           <div className="form-container">
             <AppForm />

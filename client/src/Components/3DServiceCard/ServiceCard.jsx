@@ -10,9 +10,11 @@ const ServiceCard = () => {
           <div className="parents">
             <div className="card">
               <div className="content-box">
-                <span className="card-title">Full Body Checkup</span>
+                <span className="card-title">
+                  Full Body Checkup for everyone
+                </span>
                 <p className="card-content">
-                  Get Your Full Body Checkup Now @Affordable prices
+                  Get Your Full Body Checkup Now @Affordable prices <br />
                 </p>
                 <span className="see-more">See More</span>
               </div>
@@ -34,66 +36,6 @@ const ServiceCard = () => {
               <div className="date-box">
                 <span className="month">₹</span>
                 <span className="date">999</span>
-              </div>
-            </div>
-          </div>
-          <div className="parents">
-            <div className="card">
-              <div className="content-box">
-                <span className="card-title">3D Card</span>
-                <p className="card-content">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
-                <span className="see-more">See More</span>
-              </div>
-              <div className="date-box">
-                <span className="month">₹</span>
-                <span className="date">29</span>
-              </div>
-            </div>
-          </div>
-          <div className="parents">
-            <div className="card">
-              <div className="content-box">
-                <span className="card-title">3D Card</span>
-                <p className="card-content">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
-                <span className="see-more">See More</span>
-              </div>
-              <div className="date-box">
-                <span className="month">₹</span>
-                <span className="date">29</span>
-              </div>
-            </div>
-          </div>
-          <div className="parents">
-            <div className="card">
-              <div className="content-box">
-                <span className="card-title">3D Card</span>
-                <p className="card-content">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
-                <span className="see-more">See More</span>
-              </div>
-              <div className="date-box">
-                <span className="month">₹</span>
-                <span className="date">29</span>
-              </div>
-            </div>
-          </div>
-          <div className="parents">
-            <div className="card">
-              <div className="content-box">
-                <span className="card-title">3D Card</span>
-                <p className="card-content">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
-                <span className="see-more">See More</span>
-              </div>
-              <div className="date-box">
-                <span className="month">₹</span>
-                <span className="date">29</span>
               </div>
             </div>
           </div>
