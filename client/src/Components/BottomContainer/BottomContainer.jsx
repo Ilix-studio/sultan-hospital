@@ -1,53 +1,53 @@
-import React, { useState, useEffect } from "react";
 import "./Bottom-container.css";
-import { Link } from "react-router-dom";
 
-function PhotoCard({ images }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
-
-    return () => clearInterval(intervalId);
-  }, [images.length]);
-
-  const currentImage = images[currentImageIndex];
-
+const BottomContainer = () => {
   return (
-    <article className="photo-card">
-      <h2 className="photo-card-title">Photos</h2>
-      <img
-        loading="lazy"
-        src={currentImage}
-        alt={`${"Photos"} thumbnail`}
-        className="photo-card-image"
-      />
-    </article>
-  );
-}
-
-function Box3() {
-  const photos = [
-    "https://cdn.builder.io/api/v1/image/assets/TEMP/f9dde7d4666b2f00a367d1a03b3fde61a23a6bbf5961d6df7ea6d56ac17f8a04?apiKey=be905fcf35c049c9b7bd0705582b940a&",
-    "https://images.unsplash.com/photo-1720188228786-e6cb3b668aef?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://plus.unsplash.com/premium_photo-1671512497536-e20cc1084ea7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ];
-
-  return (
-    <section className="box3">
-      <PhotoCard images={photos} />
-      <Link to="https://maps.app.goo.gl/jDSZx96mmoDJwQ9j8">
+    <>
+      <div className="scroll-container">
+        <h4>Scroll right to view</h4>
         <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/21098689864171c92013e26d463a0dd090affb6b1b9ac5c7913a5b637417709a?apiKey=be905fcf35c049c9b7bd0705582b940a&"
-          alt="Featured img"
-          className="featured-image"
+          src="https://firebasestorage.googleapis.com/v0/b/sultanhospital-e244e.appspot.com/o/hospitalentry.jpeg?alt=media&token=9d9afae3-0d40-46fc-ad0b-5bed42e09360"
+          alt=""
+          className="photo-style"
         />
-      </Link>
-    </section>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/sultanhospital-e244e.appspot.com/o/reception1.jpeg?alt=media&token=a51de9b6-5a5c-4e8e-b855-1aa2bf653490"
+          alt=""
+          className="photo-style"
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/sultanhospital-e244e.appspot.com/o/hospitalicu1.jpeg?alt=media&token=4e896045-cb6f-4020-a70f-fec8f7ffd021"
+          alt=""
+          className="photo-style"
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/sultanhospital-e244e.appspot.com/o/hospitalphoto.jpeg?alt=media&token=ac785c64-7704-4cda-920e-2652e5cb7390"
+          alt=""
+          className="photo-style"
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/sultanhospital-e244e.appspot.com/o/ipdbed1.jpeg?alt=media&token=c809330c-eead-4cf4-817c-c035e670717c"
+          alt=""
+          className="photo-style"
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/sultanhospital-e244e.appspot.com/o/office-staff1.jpeg?alt=media&token=4deecf3b-c793-4dfc-aa7e-afd7253d7752"
+          alt=""
+          className="photo-style"
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/sultanhospital-e244e.appspot.com/o/operation.jpeg?alt=media&token=c5fda5a0-e6f1-4547-b8d6-191ff40941ab"
+          alt=""
+          className="photo-style"
+        />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/sultanhospital-e244e.appspot.com/o/pharmacy-1.jpeg?alt=media&token=f8f16feb-8f00-49a5-97ac-49a71665aacd"
+          alt=""
+          className="photo-style"
+        />
+      </div>
+    </>
   );
-}
+};
 
-export default Box3;
+export default BottomContainer;

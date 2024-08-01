@@ -1,14 +1,12 @@
-import HealthServices from "./HealthServices/HealthServices";
-import Departments from "./Departments/Departments";
-import TopContainer from "./TopContainer/TopContainer";
-
-import Heading from "./Heading/Heading";
-import Navbar from "./Navbar/Navbar";
-import Footer from "./Footer/Footer";
-
 import "./home.css";
+import Navbar from "./Navbar/Navbar";
+import Heading from "./Heading/Heading";
 import Counter from "./Counter/Counter";
 import ServiceCard from "./3DServiceCard/ServiceCard";
+import Departments from "./Departments/Departments";
+import TopContainer from "./TopContainer/TopContainer";
+import BottomContainer from "./BottomContainer/BottomContainer";
+import Footer from "./Footer/Footer";
 
 const Home = () => {
   return (
@@ -18,8 +16,8 @@ const Home = () => {
       <Counter />
       <ServiceCard />
       <TopContainer />
-      <HealthServices />
       <Departments />
+      <BottomContainer />
       <Footer />
     </>
   );

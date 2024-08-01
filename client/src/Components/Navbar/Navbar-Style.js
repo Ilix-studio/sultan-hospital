@@ -32,7 +32,7 @@ const NavLogo = styled(NavLink)`
   font-size: 1.5rem;
   font-family: "Inknut Antiqua", serif;
   font-weight: 600;
-
+  color: #ce4141;
   i {
     margin-right: 0.5rem;
   }
