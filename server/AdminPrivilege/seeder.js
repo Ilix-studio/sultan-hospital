@@ -1,12 +1,12 @@
 import User from '../models/userModel.js'
 
 const seedAdmin = async () => {
-  const existingAdmin = await User.findOne({ email: 'johnDoe789@gmail.com' })
+  const existingAdmin = await User.findOne({ email: 'johndoe@gmail.com' })
   if (!existingAdmin) {
     const admin = await User.create({
-      name: 'Ilix',
-      email: 'johnDoe789@gmail.com',
-      password: 'Qwerty',
+      name: 'Khiyanat',
+      email: 'khiyanat@deori.com',
+      password: 'Thirtysevenbillion@37',
       role: 'admin',
     })
     try {
