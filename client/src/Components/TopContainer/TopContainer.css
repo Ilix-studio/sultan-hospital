@@ -5,12 +5,13 @@
   justify-content: space-around;
   gap: 1rem;
   flex-wrap: wrap;
-  align-content: space-evenly;
+  /* align-content: space-evenly; */
+  align-items: center;
 }
 
 .child {
   border: 2px solid #0e567e;
-  width: 45%;
+  width: 35%;
   height: 160px;
   background-color: rgb(240, 240, 10);
   border-radius: 15px;
@@ -64,8 +65,17 @@
   background-color: #fbebec;
   border-radius: 17px;
 }
-@media (max-width: 768px) {
+
+.map {
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
   .parent {
-    flex-direction: column;
+    /* display: flex; */
+    height: 700px;
+  }
+  .child {
+    width: 80%;
   }
 }

@@ -2,13 +2,10 @@
   width: 100%;
   height: 100vh;
   padding: 20px;
-<<<<<<< HEAD
-=======
   background-image: url("https://firebasestorage.googleapis.com/v0/b/sultan-hospital-e8f6b.appspot.com/o/backgroung-pattern-1.png?alt=media&token=5c9b5aa4-aa24-495c-92fe-ba6d51e40ccb");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
->>>>>>> 8b0218e394cd1ae395ee7ddd9b78c7da16f6e67c
   display: flex;
   justify-content: center;
   align-items: center;

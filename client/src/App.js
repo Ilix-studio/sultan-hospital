@@ -8,7 +8,7 @@ import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 import Services from "./Components/Services";
 import Contact from "./Components/ContactUs";
-
+import "./app.css";
 
 const App = () => {
   return (
@@ -17,20 +17,15 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/adminDashboard" element={<AdminDashboard />}/>
-        <Route path="/create" element={<CreateAppointment />}/>
+        <Route path="/adminDashboard" element={<AdminDashboard />} />
+        <Route path="/create" element={<CreateAppointment />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
-  )
-}
+  );
+};
 
 export default App;
-
-
-
-
-
