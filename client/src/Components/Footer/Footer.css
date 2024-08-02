@@ -47,7 +47,7 @@
 .quicklink-logo {
   width: 25vw;
   height: 50px;
-  background-image: url('../../assets/shlogo-white.png');
+  background-image: url("../../assets/shlogo-white.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -99,7 +99,7 @@
   .quicklink-logo {
     /* width: 25vw; */
     height: 40px;
-    background-image: url('../../assets/shlogo-blackk.png');
+    background-image: url("../../assets/shlogo-blackk.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
