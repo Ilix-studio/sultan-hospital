@@ -26,6 +26,27 @@
 .heading-content {
   margin-bottom: 2rem;
 }
+.heading-button {
+  height: 2.8em;
+  width: 9em;
+
+  border: 2px dashed #0d567e;
+  outline: none;
+
+  cursor: pointer;
+  font-size: 17px;
+}
+.heading-button > a {
+  text-decoration: none;
+  color: #1c2455;
+  background: transparent;
+}
+
+.heading-button:hover {
+  background: #ffffff;
+  color: #ffffff;
+}
+
 .form-container {
   /* flex: 1;
   padding-left: 20px; */

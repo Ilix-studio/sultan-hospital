@@ -15,8 +15,8 @@ const Home = () => {
       <Heading />
       <Counter />
       <ServiceCard />
-      <TopContainer />
       <Departments />
+      <TopContainer />
       <BottomContainer />
       <Footer />
     </>

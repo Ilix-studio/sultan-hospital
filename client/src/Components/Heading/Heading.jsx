@@ -23,6 +23,10 @@ const Heading = () => {
               Leading <span style={textStyle}> HealthCare</span> Excellence in
               <br /> Morigaon
             </h2>
+            <button className="heading-button">
+              {" "}
+              <a href="tel:+91-8822686715">Click to call us</a>
+            </button>
           </div>
           <div className="form-container">
             <AppForm />
