@@ -1,6 +1,6 @@
 import "./TopContainer.css";
 
-const AmbulanceService = () => (
+const Map = () => (
   <div className="bottonContainer-right">
     <iframe
       title="Sultan Hospital and Research Centre"
@@ -10,6 +10,7 @@ const AmbulanceService = () => (
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
+      className="map"
     ></iframe>
   </div>
 );
@@ -29,8 +30,8 @@ const Facilities = () => (
 const TopContainer = () => {
   return (
     <div className="parent">
-      <AmbulanceService />
       <Facilities />
+      <Map />
     </div>
   );
 };
