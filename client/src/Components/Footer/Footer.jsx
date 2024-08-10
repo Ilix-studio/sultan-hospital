@@ -11,7 +11,8 @@ const Footer = () => {
       <div className="footer">
         <div className="footer-top">
           <div className="footer-left">
-            <img src={SHlogo} alt="" className="quicklink-logo" />
+            {/* <img src={SHlogo} alt="" className="quicklink-logo" /> */}
+            <div className="quicklink-logo"></div>
 
             <h4 className="quick-links">Quick Links</h4>
             {quicklinks.map((link, index) => {
@@ -40,13 +41,13 @@ const Footer = () => {
             <p className="footer-address">
               Moidhali pathar, Domal Road, <br /> Morigaon, Assam, 782105{" "}
             </p>
-            <p className="footer-phone">+91-8822686715, +91-9435201000</p>
+            <p className="footer-phone">+91 8822686715, +91 9435201000</p>
             <p className="footer-email">sultanhospital2017@gmail.com</p>
           </div>
         </div>
         <div className="footer2">
           <div className="line"></div>
-          <h3>
+          <h3 className="bottom-text">
             © Copyright Sultan Hospital - All Rights Reserved | Developed by
             <span className="bytesizedsolutions"> BiteSizedSolutions</span>
           </h3>

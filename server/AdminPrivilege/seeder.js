@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 import User from "../models/userModel.js";
 
 const seedAdmin = async () => {
@@ -21,3 +23,4 @@ const seedAdmin = async () => {
 };
 
 export default seedAdmin;
+>>>>>>> 8b0218e394cd1ae395ee7ddd9b78c7da16f6e67c
